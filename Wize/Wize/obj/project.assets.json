@@ -12081,11 +12081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\33630\\Documents\\Cours IMIE\\5ème année - IMSI\\UExperiment\\wize\\Wize\\Wize\\Wize.csproj",
+      "projectUniqueName": "C:\\Users\\33630\\Documents\\GitHub\\WISE-Camp\\Wize\\Wize\\Wize.csproj",
       "projectName": "Wize",
-      "projectPath": "C:\\Users\\33630\\Documents\\Cours IMIE\\5ème année - IMSI\\UExperiment\\wize\\Wize\\Wize\\Wize.csproj",
+      "projectPath": "C:\\Users\\33630\\Documents\\GitHub\\WISE-Camp\\Wize\\Wize\\Wize.csproj",
       "packagesPath": "C:\\Users\\33630\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\33630\\Documents\\Cours IMIE\\5ème année - IMSI\\UExperiment\\wize\\Wize\\Wize\\obj\\",
+      "outputPath": "C:\\Users\\33630\\Documents\\GitHub\\WISE-Camp\\Wize\\Wize\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

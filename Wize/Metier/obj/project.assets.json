@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\33630\\Documents\\Cours IMIE\\5ème année - IMSI\\UExperiment\\wize\\Wize\\Metier\\Metier.csproj",
+      "projectUniqueName": "C:\\Users\\33630\\Documents\\GitHub\\WISE-Camp\\Wize\\Metier\\Metier.csproj",
       "projectName": "Metier",
-      "projectPath": "C:\\Users\\33630\\Documents\\Cours IMIE\\5ème année - IMSI\\UExperiment\\wize\\Wize\\Metier\\Metier.csproj",
+      "projectPath": "C:\\Users\\33630\\Documents\\GitHub\\WISE-Camp\\Wize\\Metier\\Metier.csproj",
       "packagesPath": "C:\\Users\\33630\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\33630\\Documents\\Cours IMIE\\5ème année - IMSI\\UExperiment\\wize\\Wize\\Metier\\obj\\",
+      "outputPath": "C:\\Users\\33630\\Documents\\GitHub\\WISE-Camp\\Wize\\Metier\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
