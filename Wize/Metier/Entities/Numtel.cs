@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    class Numtel
+    public class Numtel
     {
         //TEXT(1,25)
-        string numtel {get; set;}
+        public string numtel {get; set;}
     }
 }
