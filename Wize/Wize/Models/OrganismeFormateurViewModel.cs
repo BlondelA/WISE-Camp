@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Metier.Entities
+﻿namespace Wize.Models
 {
-    public class OrganismeFormateur : Organisme
+    public class OrganismeFormateurViewModel : OrganismeViewModel
     {
     }
 }

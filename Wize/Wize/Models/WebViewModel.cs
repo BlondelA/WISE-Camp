@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Wize.Models
+﻿namespace Wize.Models
 {
     public class WebViewModel
     {

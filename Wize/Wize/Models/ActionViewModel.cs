@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Wize.Models
 {
-    class Action
+    public class ActionViewModel
         {
         // TEXT (1,3000) non null
         public string rythmeFormation { get; set; }
         // TEXT (1,3000) non null
         public string codePublicVise { get; set; }
         // CODE (dict-boolean) non null
-        //public bool NiveauEntreeObligatoire { get; set; }
+        public CodeViewModel NiveauEntreeObligatoire { get; set; }
         // TEXT (1,3000) non null
         public string modaliteAlternance { get; set; }
         // CODE (dict-modalites-enseignement) non null
-        // public ?? ModaliteEnseignement { get; set; }
+        public CodeViewModel ModaliteEnseignement { get; set; }
         // TEXT (1,3000) non null
         public string conditionsSpecifiques { get; set; }
         // CODE (dict-boolean) non null
-        //public bool PriseEnChargeFraisPossible { get; set; }
+        public CodeViewModel PriseEnChargeFraisPossible { get; set; }
         // Coordonnées
         public CoordonneesViewModel lieuFormation { get; set; }
         // CODE (dict-modalites-es) non null
-        //public ?? ModaliteEntreesSorties { get; set; }
+        public CodeViewModel ModaliteEntreesSorties { get; set; }
         // Session
         public List<SessionViewModel> Session { get; set; }
         // TEXT (1,250)
@@ -45,7 +43,7 @@ namespace Wize.Models
         // TEXT (0,200)
         public string fraisRestants { get; set; }
         // CODE(dict-perimetre-recrutement)
-        //public ?? CodePerimetreRecrutement { get; set; }
+        public CodeViewModel CodePerimetreRecrutement { get; set; }
         // TEXT (0,50)
         public string infosPerimetreRecrutement { get; set; }
         // TEXT (1,6)
@@ -63,7 +61,7 @@ namespace Wize.Models
         // TEXT(1,600)
         public string detailConditionsPriseEnCharge { get; set; }
         // CODE (dict-boolean)
-        //public bool Conventionnement { get; set; }
+        public CodeViewModel Conventionnement { get; set; }
         // INT
         public int dureeConventionnee { get; set; }
         // Organisme formateur
