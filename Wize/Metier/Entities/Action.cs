@@ -6,47 +6,47 @@ namespace Metier.Entities
 {
     class Action
     {
-        public string RythmeFormation { get; set; }
-        public string CodePubliVise { get; set; }
+        public string rythmeFormation { get; set; }
+        public string codePubliVise { get; set; }
         //public bool NiveauEntreeObligatoire { get; set; }
-        public string ModaliteAlternance { get; set; }
+        public string modaliteAlternance { get; set; }
         // public ?? ModaliteEnseignement { get; set; }
-        public string ConditionSpecifiques { get; set; }
+        public string conditionSpecifiques { get; set; }
         //public bool PriseEnChargeFraisPossible { get; set; }
-        public string LieuFormation { get; set; }
+        public string lieuFormation { get; set; }
         //public ?? ModaliteEntreesSorties { get; set; }
         //public List<Session> Session { get; set; }
-        public string Restauration { get; set; }
-        public string Hebergement { get; set; }
-        public string Transport { get; set; }
-        public string AccesHandicapes { get; set; }
-        public string LangueFormation { get; set; }
-        public string ModlitesRecrutement { get; set; }
-        public string ModalitesPedagogiques { get; set; }
+        public string restauration { get; set; }
+        public string hebergement { get; set; }
+        public string transport { get; set; }
+        public string accesHandicapes { get; set; }
+        public string langueFormation { get; set; }
+        public string modlitesRecrutement { get; set; }
+        public string modalitesPedagogiques { get; set; }
         //public ?? CodeModalitePedagogique { get; set; }
-        public string FraisRestants { get; set; }
+        public string fraisRestants { get; set; }
         //public ?? CodePerimetreRecrutement { get; set; }
-        public string InfosPerimetreRecrutement { get; set; }
-        public string PrixHoraireTTC { get; set; }
-        public string PrixTotalTTC { get; set; }
-        public string DureeIndicative { get; set; }
-        public int NombreHeuresCentre { get; set; }
-        public int NombreHeuresEntreprise { get; set; }
-        public int NombreHeuresTotal { get; set; }
-        public string DetailConditionsPriseEnCharge { get; set; }
+        public string infosPerimetreRecrutement { get; set; }
+        public string prixHoraireTTC { get; set; }
+        public string prixTotalTTC { get; set; }
+        public string dureeIndicative { get; set; }
+        public int nombreHeuresCentre { get; set; }
+        public int nombreHeuresEntreprise { get; set; }
+        public int nombreHeuresTotal { get; set; }
+        public string detailConditionsPriseEnCharge { get; set; }
         //public bool Conventionnement { get; set; }
-        public int DureeConventionnee { get; set; }
+        public int dureeConventionnee { get; set; }
         //public OrganismeFormateur{ get; set; }
         //public OrganismeFinanceur{ get; set; }
-        public string FinancementFormation { get; set; }
-        public int NbPlaces { get; set; }
-        public string MoyensPedagogiques { get; set; }
+        public string financementFormation { get; set; }
+        public int nbPlaces { get; set; }
+        public string moyensPedagogiques { get; set; }
         //public  ResponsableEngagement { get; set; }
-        public int NombreHeuresCm { get; set; }
-        public int NombreHeuresTd { get; set; }
-        public int NombreHeuresTpTuteure { get; set; }
-        public int NombreHeuresTpNonTuteure { get; set; }
-        public int NombreHeuresPersonnel { get; set; }
+        public int nombreHeuresCm { get; set; }
+        public int nombreHeuresTd { get; set; }
+        public int nombreHeuresTpTuteure { get; set; }
+        public int nombreHeuresTpNonTuteure { get; set; }
+        public int nombreHeuresPersonnel { get; set; }
 
     }
 }
