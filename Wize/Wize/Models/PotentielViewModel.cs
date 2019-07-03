@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metier.Entities
+namespace Wize.Models
 {
     public class Potentiel
     {

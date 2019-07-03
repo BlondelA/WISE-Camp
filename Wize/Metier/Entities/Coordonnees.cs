@@ -13,6 +13,6 @@ namespace Metier.Entities
         public Numtel telfix { get; set; }
         public Numtel portable { get; set; }
         public Numtel fax { get; set; }
-        public WEB web { get; set; }
+        public Web web { get; set; }
     }
 }

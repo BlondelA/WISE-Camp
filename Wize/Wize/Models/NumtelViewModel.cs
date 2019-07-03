@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metier.Entities
+namespace Wize.Models
 {
-    public class Numtel
+    public class NumtelViewModel
     {
         //TEXT(1,25)
         public string numtel { get; set; }

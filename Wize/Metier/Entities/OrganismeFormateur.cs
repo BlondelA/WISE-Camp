@@ -4,9 +4,7 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    public class Potentiel
+    public class OrganismeFormateur : Organisme
     {
-        // TEXT (5,5)
-        public string codeFORMACODE { get; set; }
     }
 }

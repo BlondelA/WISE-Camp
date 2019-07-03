@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metier.Entities
+namespace Wize.Models
 {
-    public class DomaineFormation
+    public class DomaineFormationViewModel
     {
         // TEXT (5,5)
         public string codeFORMACODE { get; set; }
