@@ -10,3 +10,4 @@ namespace Metier.Entities
         public string code_FORMACODE { get; set; }
     }
 }
+

@@ -12,3 +12,4 @@ namespace Metier.Entities
         public string longitude { get; set; }
     }
 }
+
