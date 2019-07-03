@@ -10,4 +10,3 @@ namespace Metier.Entities
         public string numtel { get; set; }
     }
 }
-

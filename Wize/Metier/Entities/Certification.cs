@@ -12,4 +12,3 @@ namespace Metier.Entities
         public string codeCERTIFINFO { get; set; }
     }
 }
-

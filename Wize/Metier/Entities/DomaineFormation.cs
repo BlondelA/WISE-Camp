@@ -7,11 +7,10 @@ namespace Metier.Entities
     public class DomaineFormation
     {
         // TEXT (5,5)
-        public string code_FORMACODE { get; set; }
+        public string codeFORMACODE { get; set; }
         // TEXT (3,3)
-        public string code_NSF { get; set; }
+        public string codeNSF { get; set; }
         // TEXT (5,5)
-        public string code_ROME { get; set; }
+        public string codeROME { get; set; }
     }
 }
-

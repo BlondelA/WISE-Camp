@@ -16,4 +16,3 @@ namespace Metier.Entities
         public Web web { get; set; }
     }
 }
-
