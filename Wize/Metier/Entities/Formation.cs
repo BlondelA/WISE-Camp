@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Metier.Entities
 {
     public class Formation
@@ -21,11 +17,11 @@ namespace Metier.Entities
         //coordonnees non nul
         public Coordonnees contactFormation { get; set; }
         //CODE(dict-type-parcours) non nul
-        //public int parcoursDeFormation { get; set; }
+        public Code parcoursDeFormation { get; set; }
         //CODE(dict-niveaux) non nul
-        public int codeNiveauEntree { get; set; }
+        public Code codeNiveauEntree { get; set; }
         //CODE(dict-AIS)
-        //public int objectifGeneralFormation { get; set; }
+        public Code objectifGeneralFormation { get; set; }
         //certification
         public Certification certification { get; set; }
         //web
@@ -35,11 +31,11 @@ namespace Metier.Entities
         //organisme-formation-responsable
         public OrganismeFormationResponsable organismeFormationResponsable { get; set; }
         //CODE(dict-niveaux)
-        //public int codeNiveauSortie { get; set; } 
+        public Code codeNiveauSortie { get; set; } 
         //TEXT(1,3000)
         public string identifiantModule { get; set; }
         //CODE(dict-type-positionnement)
-        //public int positionnement { get; set; }
+        public Code positionnement { get; set; }
         //sous-module
         public SousModule sousModule { get; set; }
         //modules-prerequis

@@ -1,6 +1,10 @@
-﻿namespace Metier.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Wize.Models
 {
-    public class Code
+    public class CodeViewModel
     {
         //STRING
         public string type { get; set; }
