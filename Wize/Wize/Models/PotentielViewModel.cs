@@ -7,6 +7,6 @@ namespace Wize.Models
     public class Potentiel
     {
         // TEXT (5,5)
-        public string code_FORMACODE { get; set; }
+        public string codeFORMACODE { get; set; }
     }
 }
