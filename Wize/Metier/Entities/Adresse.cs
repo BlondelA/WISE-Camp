@@ -23,6 +23,6 @@ namespace Metier.Entities
         // TEXT (2,2)
         public string pays {get; set;}
         // geolocalisation
-        //public Geolocalisation geolocalisation { get; set; }
+        public Geolocalisation geolocalisation { get; set; }
     }
 }
