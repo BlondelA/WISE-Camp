@@ -2,17 +2,17 @@ namespace Metier.Entities
 {
     public class Coordonnees
     {
-        public string civilite; // TEXT (0 , 50)
-        public string nom; // TEXT (0 , 50)
-        public string prenom; // TEXT (0 , 50)
-        public string ligne1; // TEXT (0 , 50)
-        public string ligne2; // TEXT (0 , 50)
-        public string ligne3; // TEXT (0 , 50)
-        public string courriel; // TEXT (3 , 160)
-        public Adresse adresse;
-        public Numtel telfix;
-        public Numtel portable;
-        public Numtel fax;
-        public WEB web;
+        public string civilite { get; set; } // TEXT (0 , 50)
+        public string nom { get; set; } // TEXT (0 , 50)
+        public string prenom { get; set; } // TEXT (0 , 50)
+        public string ligne1 { get; set; } // TEXT (0 , 50)
+        public string ligne2 { get; set; } // TEXT (0 , 50)
+        public string ligne3 { get; set; } // TEXT (0 , 50)
+        public string courriel { get; set; } // TEXT (3 , 160)
+        public Adresse adresse { get; set; }
+        public Numtel telfix { get; set; }
+        public Numtel portable { get; set; }
+        public Numtel fax { get; set; }
+        public WEB web { get; set; }
     }
 }
