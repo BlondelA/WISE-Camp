@@ -7,9 +7,8 @@ namespace Wize.Models
     public class OrganismeFinanceurViewModel
     {
         //CODE(dict-financeurs) non nul
-        public int codeFinanceur {get; set;}
+        public int codeFinanceur { get; set; }
         //INT()
-        public int nbPlaceFinancees {get; set;}
+        public int nbPlaceFinancees { get; set; }
     }
 }
-

@@ -14,4 +14,3 @@ namespace Wize.Models
         public string code_ROME { get; set; }
     }
 }
-

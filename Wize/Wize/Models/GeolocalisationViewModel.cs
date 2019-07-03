@@ -12,4 +12,3 @@ namespace Wize.Models
         public string longitude { get; set; }
     }
 }
-

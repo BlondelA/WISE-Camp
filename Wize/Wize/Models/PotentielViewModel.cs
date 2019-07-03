@@ -10,4 +10,3 @@ namespace Wize.Models
         public string code_FORMACODE { get; set; }
     }
 }
-

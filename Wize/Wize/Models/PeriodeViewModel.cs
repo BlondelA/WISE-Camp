@@ -12,4 +12,3 @@ namespace Wize.Models
         public DateTime fin { get; set; }
     }
 }
-
