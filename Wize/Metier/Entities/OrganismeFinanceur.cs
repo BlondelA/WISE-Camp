@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    public class OrganismeFinanceur:Organisme
+    public class OrganismeFinanceur
     {
         //CODE(dict-financeurs) non nul
-        public int codeFinanceur {get; set;}
+        public int codeFinanceur { get; set; }
         //INT()
-        public int nbPlaceFinancees {get; set;}
+        public int nbPlaceFinancees { get; set; }
     }
 }

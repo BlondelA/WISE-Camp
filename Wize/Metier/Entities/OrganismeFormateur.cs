@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    public class OrganismeFormateur:Organisme
+    public class OrganismeFormateur : Organisme
     {
     }
 }
