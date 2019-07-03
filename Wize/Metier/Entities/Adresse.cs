@@ -7,22 +7,23 @@ namespace Metier.Entities
     public class Adresse
     {
         // TEXT (1,50)
-        public string ligne {get; set;}
+        public string ligne { get; set; }
         // TEXT (5,5)
-        public string codepostal {get; set;}
+        public string codepostal { get; set; }
         // TEXT (1,50)
-        public string ville {get; set;}
+        public string ville { get; set; }
         // TEXT (2,3)
-        public string departement {get; set;}
+        public string departement { get; set; }
         // TEXT (5,5)
-        public string codeINSEEcommune {get; set;}
+        public string codeINSEEcommune { get; set; }
         // TEXT (4,5)
-        public string codeINSEEcanton {get; set;}
+        public string codeINSEEcanton { get; set; }
         // TEXT (2,2)
-        public string region {get; set;}
+        public string region { get; set; }
         // TEXT (2,2)
-        public string pays {get; set;}
+        public string pays { get; set; }
         // geolocalisation
         public Geolocalisation geolocalisation { get; set; }
     }
 }
+

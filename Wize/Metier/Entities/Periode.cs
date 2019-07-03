@@ -12,3 +12,4 @@ namespace Metier.Entities
         public DateTime fin { get; set; }
     }
 }
+

@@ -52,5 +52,3 @@ namespace Metier.Entities
         public string validations { get; set; }
     }
 }
-
-
