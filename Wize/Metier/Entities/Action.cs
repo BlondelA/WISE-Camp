@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    class Action
+    public class Action
     {
         // TEXT (1,3000) non null
         public string rythmeFormation { get; set; }
