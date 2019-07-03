@@ -12,4 +12,3 @@ namespace Metier.Entities
         public int nbPlaceFinancees { get; set; }
     }
 }
-

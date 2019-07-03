@@ -43,7 +43,7 @@ namespace Metier.Entities
         //sous-module
         public SousModule sousModule { get; set; }
         //modules-prerequis
-        public ModulePrerequis modulesPrerequis { get; set; }
+        public ModulesPrerequis modulesPrerequis { get; set; }
         //INT
         public int creditsEcts { get; set; }
         //BOOL
