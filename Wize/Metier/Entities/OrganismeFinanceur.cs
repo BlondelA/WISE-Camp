@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    public class OrganismeFinanceur
+    public class OrganismeFinanceur:Organisme
     {
         //CODE(dict-financeurs) non nul
         public int codeFinanceur {get; set;}
