@@ -1,6 +1,6 @@
-﻿namespace Metier.Entities
+﻿namespace Wize.Models
 {
-    public class Adresse
+    public class AdresseViewModel
     {
         // TEXT (1,50)
         public string ligne { get; set; }
@@ -19,6 +19,6 @@
         // TEXT (2,2)
         public string pays { get; set; }
         // geolocalisation
-        public Geolocalisation geolocalisation { get; set; }
+        public GeolocalisationViewModel geolocalisation { get; set; }
     }
 }

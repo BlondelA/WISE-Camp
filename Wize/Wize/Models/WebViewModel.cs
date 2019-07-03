@@ -1,6 +1,6 @@
-﻿namespace Metier.Entities
+﻿namespace Wize.Models
 {
-    public class Web
+    public class WebViewModel
     {
         // TEXT (3, 400)
         public string urlWeb { get; set; }

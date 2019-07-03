@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Metier.Entities
 {
@@ -11,21 +9,21 @@ namespace Metier.Entities
         // TEXT (1,3000) non null
         public string codePublicVise { get; set; }
         // CODE (dict-boolean) non null
-        //public bool NiveauEntreeObligatoire { get; set; }
+        public Code niveauEntreeObligatoire { get; set; }
         // TEXT (1,3000) non null
         public string modaliteAlternance { get; set; }
         // CODE (dict-modalites-enseignement) non null
-        // public ?? ModaliteEnseignement { get; set; }
+        public Code modaliteEnseignement { get; set; }
         // TEXT (1,3000) non null
         public string conditionsSpecifiques { get; set; }
         // CODE (dict-boolean) non null
-        //public bool PriseEnChargeFraisPossible { get; set; }
+        public Code priseEnChargeFraisPossible { get; set; }
         // Coordonnées
         public Coordonnees lieuFormation { get; set; }
         // CODE (dict-modalites-es) non null
-        //public ?? ModaliteEntreesSorties { get; set; }
+        public Code modaliteEntreesSorties { get; set; }
         // Session
-        public List<Session> Session { get; set; }
+        public List<Session> session { get; set; }
         // TEXT (1,250)
         public string restauration { get; set; }
         // TEXT (1,250)
@@ -45,7 +43,7 @@ namespace Metier.Entities
         // TEXT (0,200)
         public string fraisRestants { get; set; }
         // CODE(dict-perimetre-recrutement)
-        //public ?? CodePerimetreRecrutement { get; set; }
+        public Code codePerimetreRecrutement { get; set; }
         // TEXT (0,50)
         public string infosPerimetreRecrutement { get; set; }
         // TEXT (1,6)
@@ -63,7 +61,7 @@ namespace Metier.Entities
         // TEXT(1,600)
         public string detailConditionsPriseEnCharge { get; set; }
         // CODE (dict-boolean)
-        //public bool Conventionnement { get; set; }
+        public Code conventionnement { get; set; }
         // INT
         public int dureeConventionnee { get; set; }
         // Organisme formateur
@@ -77,7 +75,7 @@ namespace Metier.Entities
         // TEXT
         public string moyensPedagogiques { get; set; }
         // Coordonnées
-        public  Coordonnees responsableEngagement { get; set; }
+        public Coordonnees responsableEngagement { get; set; }
         // INT
         public int nombreHeuresCm { get; set; }
         // INT
@@ -88,6 +86,5 @@ namespace Metier.Entities
         public int nombreHeuresTpNonTuteure { get; set; }
         // INT
         public int nombreHeuresPersonnel { get; set; }
-
     }
 }

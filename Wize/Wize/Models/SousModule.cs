@@ -1,10 +1,10 @@
-namespace Metier.Entities
+namespace Wize.Models
 {
-    public class SousModule
+    public class SousModuleViewModel
     {
         // TEXT (0 , 3000)
         public string referenceModule { get; set; } 
         // CODE (dict-type-module)
-        public Code typeModule { get; set; } 
+        public CodeViewModel typeModule { get; set; } 
     }
 }
