@@ -9,21 +9,21 @@ namespace Wize.Models
         // TEXT (1,3000) non null
         public string codePublicVise { get; set; }
         // CODE (dict-boolean) non null
-        public CodeViewModel NiveauEntreeObligatoire { get; set; }
+        public CodeViewModel niveauEntreeObligatoire { get; set; }
         // TEXT (1,3000) non null
         public string modaliteAlternance { get; set; }
         // CODE (dict-modalites-enseignement) non null
-        public CodeViewModel ModaliteEnseignement { get; set; }
+        public CodeViewModel modaliteEnseignement { get; set; }
         // TEXT (1,3000) non null
         public string conditionsSpecifiques { get; set; }
         // CODE (dict-boolean) non null
-        public CodeViewModel PriseEnChargeFraisPossible { get; set; }
+        public CodeViewModel priseEnChargeFraisPossible { get; set; }
         // Coordonnées
         public CoordonneesViewModel lieuFormation { get; set; }
         // CODE (dict-modalites-es) non null
-        public CodeViewModel ModaliteEntreesSorties { get; set; }
+        public CodeViewModel modaliteEntreesSorties { get; set; }
         // Session
-        public List<SessionViewModel> Session { get; set; }
+        public List<SessionViewModel> session { get; set; }
         // TEXT (1,250)
         public string restauration { get; set; }
         // TEXT (1,250)
@@ -43,7 +43,7 @@ namespace Wize.Models
         // TEXT (0,200)
         public string fraisRestants { get; set; }
         // CODE(dict-perimetre-recrutement)
-        public CodeViewModel CodePerimetreRecrutement { get; set; }
+        public CodeViewModel codePerimetreRecrutement { get; set; }
         // TEXT (0,50)
         public string infosPerimetreRecrutement { get; set; }
         // TEXT (1,6)
@@ -61,7 +61,7 @@ namespace Wize.Models
         // TEXT(1,600)
         public string detailConditionsPriseEnCharge { get; set; }
         // CODE (dict-boolean)
-        public CodeViewModel Conventionnement { get; set; }
+        public CodeViewModel conventionnement { get; set; }
         // INT
         public int dureeConventionnee { get; set; }
         // Organisme formateur
