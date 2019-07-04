@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Metier.Entities
+﻿namespace Metier.Entities
 {
     public class Adresse
     {
@@ -27,4 +23,3 @@ namespace Metier.Entities
         public Geolocalisation geolocalisation { get; set; }
     }
 }
-

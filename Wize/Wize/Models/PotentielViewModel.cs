@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
 
 namespace Wize.Models
 {
-    public class Potentiel
+    public class PotentielViewModel
     {
         // TEXT (5,5)
+        [JsonProperty(PropertyName = "code-FORMACODE")]
         public string codeFORMACODE { get; set; }
     }
 }

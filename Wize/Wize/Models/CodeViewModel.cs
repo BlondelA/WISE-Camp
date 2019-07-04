@@ -1,8 +1,7 @@
-﻿namespace Metier.Entities
+﻿namespace Wize.Models
 {
-    public class Code
+    public class CodeViewModel
     {
-        public int Id { get; set; }
         //STRING
         public string type { get; set; }
         // INT
