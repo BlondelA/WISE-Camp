@@ -1,10 +1,14 @@
+using Newtonsoft.Json;
+
 namespace Wize.Models
 {
     public class OrganismeFinanceurViewModel
     {
         //CODE(dict-financeurs) non nul
+        [JsonProperty(PropertyName = "code-financeur")]
         public CodeViewModel codeFinanceur { get; set; }
         //INT()
-        public int nbPlaceFinancees { get; set; }
+        [JsonProperty(PropertyName = "nb-places-financees")]
+        public int nbPlacesFinancees { get; set; }
     }
 }
