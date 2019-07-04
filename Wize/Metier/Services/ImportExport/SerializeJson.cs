@@ -1,15 +1,14 @@
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
 using System.Text;
 using Wize.Models;
 
-namespace Wize.Controllers
+namespace Metier.Services.ImportExport
 {
-    public class FormationController : Controller
+    class SerialiseJson
     {
-        public FormationViewModel formationViewModel { get; set; }
+        public FormationViewModel formationViewModel { get;set; }
 
         public void OpenFile()
         {
@@ -17,10 +16,10 @@ namespace Wize.Controllers
 
             //string path = @"c:\temp\MyTest.txt";
 
-            if (!System.IO.File.Exists(path)) 
+            if (!File.Exists(path)) 
             {
                 // Create the file.
-                using (FileStream fs = System.IO.File.Create(path)) 
+                using (FileStream fs = File.Create(path)) 
                 {
                     Byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
 
@@ -30,7 +29,7 @@ namespace Wize.Controllers
             }
 
             // Open the stream and read it back.
-            using (FileStream fs = System.IO.File.OpenRead(path)) 
+            using (FileStream fs = File.OpenRead(path)) 
             {
                 byte[] b = new byte[1024];
                 UTF8Encoding temp = new UTF8Encoding(true);
@@ -42,9 +41,10 @@ namespace Wize.Controllers
             }
         }
 
-         public string PopulateJson()
+        public string PopulateJson()
         {
-            return JsonConvert.SerializeObject(formationViewModel);
+          return JsonConvert.SerializeObject(formationViewModel);
         }
+       
     }
 }
