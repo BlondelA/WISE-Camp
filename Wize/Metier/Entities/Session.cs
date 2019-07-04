@@ -6,6 +6,7 @@ namespace Metier.Entities
 {
     public class Session
     {
+        public int Id { get; set; }
         // periode 
         public Periode periode {get; set;}
         // adresse

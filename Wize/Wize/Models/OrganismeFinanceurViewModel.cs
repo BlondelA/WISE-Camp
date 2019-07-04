@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Wize.Models
 {
-    public class OrganismeFinanceurViewModel
+    public class OrganismeFinanceurViewModel 
     {
         //CODE(dict-financeurs) non nul
         public int codeFinanceur { get; set; }

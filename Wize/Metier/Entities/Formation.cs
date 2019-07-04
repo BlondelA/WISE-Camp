@@ -6,6 +6,7 @@ namespace Metier.Entities
 {
     public class Formation
     {
+        public int Id { get; set; }
         //DomaineFormation
         public DomaineFormation domaineFormation { get; set; }
         //TEXT(1,255) non nul

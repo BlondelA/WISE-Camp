@@ -6,6 +6,7 @@ namespace Metier.Entities
 {
     public class Action
     {
+        public int Id { get; set; }
         // TEXT (1,3000) non null
         public string rythmeFormation { get; set; }
         // TEXT (1,3000) non null

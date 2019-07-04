@@ -6,6 +6,7 @@ namespace Metier.Entities
 {
     public class Adresse
     {
+        public int Id { get; set; }
         // TEXT (1,50)
         public string ligne { get; set; }
         // TEXT (5,5)

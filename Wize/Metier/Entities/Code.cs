@@ -6,6 +6,7 @@ namespace Metier.Entities
 {
     public class Code
     {
+        public int Id { get; set; }
         //STRING
         public string type { get; set; }
         // INT

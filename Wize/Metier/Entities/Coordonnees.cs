@@ -2,6 +2,7 @@ namespace Metier.Entities
 {
     public class Coordonnees
     {
+        public int Id { get; set; }
         public string civilite { get; set; } // TEXT (0 , 50)
         public string nom { get; set; } // TEXT (0 , 50)
         public string prenom { get; set; } // TEXT (0 , 50)
