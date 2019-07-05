@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metier.Entities
 {
-    public class OrganismeFormateur
+    public class OrganismeFormateurs
     {
         public int Id { get; set; }
         // TEXT (14,14) non null
