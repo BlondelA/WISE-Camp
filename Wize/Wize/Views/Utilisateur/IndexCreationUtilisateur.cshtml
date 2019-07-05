@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "IndexCreationUser";
+}
+
+<h1>Créer un utilisateur</h1>
+<hr />
+
+<a asp-controller="Creer" asp-action="CreerUsers" class="form-hori">
+
+    <form asp-controller="Admin" asp-action="Register" method="post" class="form-hori">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        @*<div class="form_group">
+            <label asp-for="Nom" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label asp-for="Prenom" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Prenom" class="form-control" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+        </div>
+
+        <input id="Text1" type="text" />
+
+        <div class="form_group">
+            <label asp-for="Email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label asp-for="PasswordTemp" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PasswordTemp" class="form-control" />
+                <span asp-validation-for="PasswordTemp" class="text-danger"></span>
+            </div>
+        </div>*@
+
+
+
+    </form>
+
+</a>
+
+<a asp-controller="Fermer" asp-action="Fermer" class="form-hori">
+
+</a>
