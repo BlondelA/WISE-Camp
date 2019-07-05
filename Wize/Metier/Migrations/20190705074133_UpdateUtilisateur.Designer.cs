@@ -3,14 +3,16 @@ using System;
 using Metier.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Metier.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190705074133_UpdateUtilisateur")]
+    partial class UpdateUtilisateur
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -477,18 +479,6 @@ namespace Metier.Migrations
                     b.ToTable("Potentiels");
                 });
 
-            modelBuilder.Entity("Metier.Entities.Role", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("libelle");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Roles");
-                });
-
             modelBuilder.Entity("Metier.Entities.Session", b =>
                 {
                     b.Property<int>("Id")
@@ -535,28 +525,6 @@ namespace Metier.Migrations
                     b.HasIndex("typeModuleId");
 
                     b.ToTable("SousModules");
-                });
-
-            modelBuilder.Entity("Metier.Entities.Utilisateur", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("mail");
-
-                    b.Property<string>("motDePasse");
-
-                    b.Property<string>("nom");
-
-                    b.Property<string>("prenom");
-
-                    b.Property<int?>("roleid");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("roleid");
-
-                    b.ToTable("Utilisateurs");
                 });
 
             modelBuilder.Entity("Metier.Entities.Web", b =>
@@ -764,13 +732,6 @@ namespace Metier.Migrations
                     b.HasOne("Metier.Entities.Code", "typeModule")
                         .WithMany()
                         .HasForeignKey("typeModuleId");
-                });
-
-            modelBuilder.Entity("Metier.Entities.Utilisateur", b =>
-                {
-                    b.HasOne("Metier.Entities.Role", "role")
-                        .WithMany()
-                        .HasForeignKey("roleid");
                 });
 #pragma warning restore 612, 618
         }

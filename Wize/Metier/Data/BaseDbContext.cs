@@ -28,7 +28,7 @@ namespace Metier.Data
             }
         }
 
-        public DbSet<Action> Actions {get;set;}
+        public DbSet<Action> Actions { get; set; }
         public DbSet<Adresse> Adresses { get; set; }
         public DbSet<Certification> Certifications { get; set; }
         public DbSet<Code> Codes { get; set; }
@@ -47,6 +47,8 @@ namespace Metier.Data
         public DbSet<Session> Sessions { get; set; }
         public DbSet<SousModule> SousModules { get; set; }
         public DbSet<Web> Webs { get; set; }
+        public DbSet<Utilisateur> Utilisateurs {get;set;}
+        public DbSet<Role> Roles { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

@@ -6,7 +6,8 @@ namespace Metier.Entities
 {
     public class Role
     {
+        public int id { get; set; }
         // TEXT
-        public string identifiant { get; set; }
+        public string libelle { get; set; }
     }
 }

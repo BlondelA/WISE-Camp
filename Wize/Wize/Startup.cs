@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Metier.Data;
 using Microsoft.EntityFrameworkCore;
+using Metier.Data;
 
 namespace Wize
 {
