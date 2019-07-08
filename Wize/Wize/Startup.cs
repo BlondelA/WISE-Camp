@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Metier.Data;
+using Metier.Services.Interfaces;
+using Metier.Services;
+using Metier.Repositories.Utilisateur;
+using Metier.Repositories;
 
 namespace Wize
 {
@@ -37,8 +41,13 @@ namespace Wize
             {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
             });
-
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddScoped<IUtilisateurService, UtilisateurService>();
+            services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
