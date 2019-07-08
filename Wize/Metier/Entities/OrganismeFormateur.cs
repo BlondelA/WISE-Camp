@@ -6,7 +6,7 @@ namespace Metier.Entities
 {
     public class OrganismeFormateur
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         // TEXT (14,14) non null
         public string siret { get; set; }
         // TEXT (1,250) non null

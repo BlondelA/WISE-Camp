@@ -22,7 +22,7 @@ namespace Metier.Repositories
             _dbSet = baseDbContext.Utilisateurs;
         }
 
-        public virtual Maybe<Metier.Entities.Utilisateur> Get(int id) => _dbSet.FirstOrDefault(u => u.id == id);
+        public virtual Maybe<Metier.Entities.Utilisateur> Get(int id) => _dbSet.FirstOrDefault(u => u.Id == id);
 
         public Maybe<Metier.Entities.Utilisateur> GetByEmail(string email)
         {
