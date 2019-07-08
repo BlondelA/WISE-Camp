@@ -1,6 +1,6 @@
 ﻿namespace Metier.Entities
 {
-    public class OrganismeFormationResponsable 
+    public class OrganismeFormationResponsable
     {
         public int Id { get; set; }
         // TEXT (14,14) non null
