@@ -40,7 +40,7 @@ namespace Metier.Data
         public DbSet<ModulesPrerequis> ModulesPrerequis { get; set; }
         public DbSet<Numtel> Numtels { get; set; }
         public DbSet<OrganismeFinanceur> OrganismeFinanceurs { get; set; }
-        public DbSet<OrganismeFormateur> OrganismeFormateurs { get; set; }
+        public DbSet<OrganismeFormateurs> OrganismeFormateurs { get; set; }
         public DbSet<OrganismeFormationResponsable> OrganismeFormationResponsables { get; set; }
         public DbSet<Periode> Periodes { get; set; }
         public DbSet<Potentiel> Potentiels { get; set; }
