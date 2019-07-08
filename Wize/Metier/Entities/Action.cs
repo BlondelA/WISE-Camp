@@ -66,7 +66,7 @@ namespace Metier.Entities
         // INT
         public int dureeConventionnee { get; set; }
         // Organisme formateur
-        public OrganismeFormateur organismeFormateur { get; set; }
+        public OrganismeFormateurs organismeFormateur { get; set; }
         // Organisme financeur
         public OrganismeFinanceur organismeFinanceur { get; set; }
         // TEXT
