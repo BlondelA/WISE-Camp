@@ -6,7 +6,7 @@ namespace Metier.Entities
 {
     public class Utilisateur
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         // TEXT 
         public string nom { get; set; }
         // TEXT
