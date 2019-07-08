@@ -51,5 +51,10 @@ namespace Wize.Controllers
         {
             return View();
         }
+
+        public ActionResult LayoutLogin()
+        {
+            return View("_LayoutLogin");
+        }
     }
 }

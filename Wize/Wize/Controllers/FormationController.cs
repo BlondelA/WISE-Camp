@@ -97,6 +97,7 @@ namespace Wize.Controllers
             {
                 return View();
             }
+        }
 
         public FormationViewModel formationViewModel { get; set; }
 
