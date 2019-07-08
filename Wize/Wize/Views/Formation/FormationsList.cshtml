@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "FormationnList";
+}
+
+
+<h1>FomrationList</h1>
+
+@model IEnumerable<FormationViewModel>
+
+<table>
+    @foreach (var formation in Model)
+    {
+    <tr>
+        <td>
+        </td>
+        <td>
+            <button type="submit" class="btn btn-default">Modifier</button>
+        </td>
+        <td>
+            <button type="submit" class="btn btn-default">Supprimer</button>
+        </td>
+    </tr>
+    }
+</table>
