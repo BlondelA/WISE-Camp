@@ -18,10 +18,10 @@ namespace Wize.Controllers
         public ActionResult IndexCreationFormation()
         {
 
-            var utilisateurViewModel = new FormationViewModel()
+            var formationViewModel = new FormationViewModel()
             {
             };
-            return View(utilisateurViewModel);
+            return View(formationViewModel);
         }
 
         // GET: Formation/Details/5
@@ -29,6 +29,48 @@ namespace Wize.Controllers
         {
             return View();
         }
+
+        //GET:Formation/Qualifiante
+
+        public ActionResult Qualifiante()
+        {
+            var formationViewModelQualifiantes =  new List<FormationViewModel>();
+            var myFormationViewModelQualifiantes = formationViewModelQualifiantes.Where(x => x.certifiante == false);
+            return View(myFormationViewModelQualifiantes);
+        }
+
+        //GET:Formation/Qualifiante
+
+        public ActionResult Certifiante()
+        {
+            var formationViewModelCertifiantes =  new List<FormationViewModel>();
+            var myFormationViewModelCertifiantes = formationViewModelCertifiantes.Where(x => x.certifiante == true);
+            return View(myFormationViewModelCertifiantes);
+        }
+
+        //GET : Formation/DateBetween
+
+        public ActionResult DateBetween(DateTime beginDate, DateTime endDate)
+        {
+            var formationViewModelDateBetween = new List<FormationViewModel>();
+            var MyFormationViewModelDateBetween = new List<FormationViewModel>();
+            
+            var SessionBeginDate = new DateTime();
+            var SessionEndDate = new DateTime();
+            foreach(var f in formationViewModelDateBetween )
+            {
+                var actionViewModel = f.action;
+                SessionBeginDate = actionViewModel.session.FirstOrDefault(
+                    x => x.periode.debut == beginDate
+                ).periode.debut;
+                SessionEndDate = actionViewModel.session.FirstOrDefault(
+                    w => w.periode.fin == endDate
+                ).periode.debut;
+
+            }
+            return View();
+        }
+
 
         // GET: Formation/Create
         public ActionResult Create()
