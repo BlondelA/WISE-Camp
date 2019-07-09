@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Dosis:500,600,700,800&display=swap');
+@import "partials/_index";
 
 body {
     background-color: #F2FBFD;
@@ -27,9 +28,28 @@ body {
             font-weight: bold;
         }
     }
+
+    .content-img-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn.btn-secondary-wise {
+        margin: 30px;
+        background: #F2FBFD;
+        box-shadow: none;
+        border: 1px solid #CACDD3;
+        border-radius: 8px;
+        color: black;
+        font-family: 'zona_black', sans-serif;
+
+        &:hover {
+            background-color: #F2FBFD;
+        }
+    }
 }
 
-/*button {
-
-    $title-imie: 'zona_black', sans-serif !default;
-}*/
+.title-login {
+    color: #0898B8;
+    text-transform: uppercase;
+}
