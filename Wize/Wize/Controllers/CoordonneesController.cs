@@ -14,9 +14,9 @@ namespace Wize.Controllers
         private readonly ICoordonneesService _coordonneesService;
 
 
-        public CoordonneesController(IUtilisateurService utilisateurService)
+        public CoordonneesController(IUtilisateurService coordonneesService)
         {
-            _coordonneesService = _coordonneesService;
+            _coordonneesService = coordonneesService;
         }
         
         [HttpGet]
