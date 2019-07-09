@@ -40,21 +40,21 @@ namespace Wize.Models
         public WebViewModel web { get; set; }
     }
     
-    public Coordonnees CoordonneesViewModelToCoordonnees()
-    {
-        var coordonnees = new Coordonnees();
-        coordonnees.civilite = this.civilite;
-        coordonnees.nom = this.nom;
-        coordonnees.prenom = this.prenom;
-        coordonnees.ligne1 = this.ligne1;
-        coordonnees.ligne2 = this.ligne2;
-        coordonnees.ligne3 = this.ligne3;
-        coordonnees.corriel = this.courriel;
-        coordonnees.adresse = this.adresse;
-        coordonnees.telfix = this.telfixe;
-        coordonnees.portable = this.portable;
-        coordonnees.fax = this.fax;
-        coordonnees.web = this.web;
-        return coordonnees;
-    }
+    //public Coordonnees CoordonneesViewModelToCoordonnees()
+    //{
+    //    var coordonnees = new Coordonnees();
+    //    coordonnees.civilite = this.civilite;
+    //    coordonnees.nom = this.nom;
+    //    coordonnees.prenom = this.prenom;
+    //    coordonnees.ligne1 = this.ligne1;
+    //    coordonnees.ligne2 = this.ligne2;
+    //    coordonnees.ligne3 = this.ligne3;
+    //    coordonnees.corriel = this.courriel;
+    //    coordonnees.adresse = this.adresse;
+    //    coordonnees.telfix = this.telfixe;
+    //    coordonnees.portable = this.portable;
+    //    coordonnees.fax = this.fax;
+    //    coordonnees.web = this.web;
+    //    return coordonnees;
+    //}
 }
