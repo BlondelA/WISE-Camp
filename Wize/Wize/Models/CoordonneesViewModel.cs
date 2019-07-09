@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using Metier.Entities;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -29,7 +31,7 @@ namespace Wize.Models
         [JsonProperty(PropertyName = "courriel")]
         public string courriel { get; set; } 
         [JsonProperty(PropertyName = "adresse")]        
-        public AdresseViewModel adresse { get; set; }
+        public Adresse adresse { get; set; }
         [JsonProperty(PropertyName = "telfix")]
         public NumtelViewModel telfix { get; set; }
         [JsonProperty(PropertyName = "portable")]
@@ -50,10 +52,10 @@ namespace Wize.Models
             coordonnees.ligne3 = this.ligne3;
             coordonnees.courriel = this.courriel;
             coordonnees.adresse = this.adresse;
-            coordonnees.telfix = this.telfix;
-            coordonnees.portable = this.portable;
-            coordonnees.fax = this.fax;
-            coordonnees.web = this.web;
+            coordonnees.telfix.numtel = this.telfix.numtel;
+            coordonnees.portable.numtel = this.portable.numtel;
+            coordonnees.fax.numtel = this.fax.numtel;
+            coordonnees.web.urlWeb = this.web.urlweb;
             return coordonnees;
         }
     }

@@ -11,12 +11,12 @@ namespace Wize.Controllers
 {
     public class CoordonneesController : Controller
     {
-        private readonly ICoordonneesService _coordonneesService;
-        
-        public CoordonneesController(IUtilisateurService coordonneesService)
-        {
-            _coordonneesService = coordonneesService;
-        }
+//        private readonly ICoordonneesService _coordonneesService;
+//        
+//        public CoordonneesController(IUtilisateurService coordonneesService)
+//        {
+//            _coordonneesService = coordonneesService;
+//        }
         
         [HttpGet]
         public ActionResult AjoutCoordonnees()
@@ -33,9 +33,40 @@ namespace Wize.Controllers
                 {
                     var coordonnees = coordonneesViewModel.CoordonneesViewModelToCoordonnees();
 
-                    _coordonneesService.AddCoordonnees(coordonnees);
+                    //_coordonneesService.AddCoordonnees(coordonnees);
                 }
             }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult GetCoordonnees(int id)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditCoordonnees(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditCoordonnees(CoordonneesViewModel coordonneesViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                if (coordonneesViewModel != null)
+                {
+                    
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult SupprimerCoordonnees()
+        {
             return View();
         }
     }
