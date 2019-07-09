@@ -43,7 +43,10 @@ namespace Wize
             });
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            var connection = @"Server=10.2.8.224;port=3306;User Id=charly;Password=charly;Database=wisedb;";
+            services.AddDbContext<BaseDbContext>(options => options.UseMySql(connection));
             services.AddScoped<IUtilisateurService, UtilisateurService>();
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
 
@@ -66,6 +69,7 @@ namespace Wize
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

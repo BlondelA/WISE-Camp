@@ -12,6 +12,9 @@ namespace Metier.Repositories.Utilisateur
 
         Maybe<Metier.Entities.Utilisateur> GetByEmail(string email);
 
+        Maybe<Metier.Entities.Utilisateur> getEmailAndPassword(string email, string motDePasse);
+
+        
         Metier.Entities.Utilisateur Add(Metier.Entities.Utilisateur entity);
     }
 }

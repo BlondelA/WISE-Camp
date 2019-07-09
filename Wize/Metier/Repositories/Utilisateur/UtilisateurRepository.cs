@@ -36,5 +36,15 @@ namespace Metier.Repositories
             var utilisateur = _baseDbContext.Utilisateurs.Add(entity).Entity;
             return utilisateur;
         }
+
+        public Maybe<Metier.Entities.Utilisateur> getEmailAndPassword(string email, string motDePasse)
+        {
+            var utilisateur = _dbSet
+                .FirstOrDefault(u => u.mail == email && u.motDePasse == motDePasse);
+
+            //var utilisateur = _baseDbContext.Utilisateurs
+            //    .Where(u => u.mail == u.mail && u.motDePasse == u.motDePasse).FirstOrDefault();
+            return utilisateur;
+        }
     }
 }
