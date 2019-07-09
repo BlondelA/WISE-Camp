@@ -1,22 +1,22 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Metier.Services;
-//using Metier.Services.Interfaces;
-//using Microsoft.AspNetCore.Mvc;
-//using Wize.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Metier.Services;
+using Metier.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Wize.Models;
 
 namespace Wize.Controllers
 {
     public class CoordonneesController : Controller
     {
-//        private readonly ICoordonneesService _coordonneesService;
-//        
-//        public CoordonneesController(IUtilisateurService coordonneesService)
-//        {
-//            _coordonneesService = coordonneesService;
-//        }
+        private readonly ICoordonneesService _coordonneesService;
+        
+        public CoordonneesController(IUtilisateurService coordonneesService)
+        {
+            _coordonneesService = coordonneesService;
+        }
         
         [HttpGet]
         public ActionResult AjoutCoordonnees()
@@ -33,7 +33,7 @@ namespace Wize.Controllers
                 {
                     var coordonnees = coordonneesViewModel.CoordonneesViewModelToCoordonnees();
 
-                    //_coordonneesService.AddCoordonnees(coordonnees);
+                    _coordonneesService.AddCoordonnees(coordonnees);
                 }
             }
             return View();
