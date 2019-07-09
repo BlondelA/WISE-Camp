@@ -1,0 +1,129 @@
+﻿body {
+    background-color: #F2FBFD;
+}
+
+.no-margin-col {
+    padding: 0 !important;
+}
+
+.no-margin-row {
+    margin: 0 !important;
+}
+
+.section-login {
+    .background-image-login-right {
+        display: none;
+    }
+
+    @media(min-width: 601px) {
+        .background-image-login-right {
+            display: block;
+            background-image: url('/images/background-login.png');
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .login-title-h1 {
+                margin-top: 0;
+                font-family: $fontDosis;
+                padding: 50px 30px 0 50px;
+                color: white;
+                font-weight: bold;
+                font-size: 30px;
+
+                @media(min-width:768px) {
+                    font-size: 40px;
+                }
+
+                @media(min-width:841px) {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+
+    .content-img-header {
+        text-align: center;
+        @media(min-width: 425px) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .btn.btn-secondary-wise {
+        margin: 25px 20px;
+        background: #F2FBFD;
+        box-shadow: none;
+        border: 1px solid #CACDD3;
+        border-radius: 8px;
+        color: black;
+        font-family: $fontButton;
+
+        &:hover {
+            background-color: #F2FBFD;
+        }
+    }
+}
+
+.title-login {
+    color: #0898B8;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: $fontDosis;
+    font-weight: bold;
+}
+
+.content-btn-login{
+    margin-top: 30px;
+    text-align: right;
+}
+.btn-submit {
+    background-color: #0898B8;
+    box-shadow: none;
+    border-radius: 8px;
+    color: white;
+    padding: 20px 14px;
+    font-family: $fontButton;
+}
+
+.color-grey {
+    color: #CACDD3;
+}
+
+.content-input {
+    background: white;
+    border-radius: 50px;
+    border: 1px solid #CACDD3;
+    height: 70px;
+    &:focus{
+        border: none;
+        /*box-shadow: 0 1px 20px -1px #*/
+    }
+}
+
+.input-field.input-field-wise {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    .wise-input {
+        border-bottom: none !important;
+        box-shadow: none !important;
+        margin-bottom: 0;
+        margin-left: -20px;
+        height: 70px;
+        caret-color: #0D819F;
+    }
+
+    .material-icons.prefix {
+        position: relative;
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 24px;
+        top: 0;
+        font-weight: bold;
+        &.active {
+            color: #0D819F;
+        }
+    }
+}
