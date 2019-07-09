@@ -33,6 +33,8 @@ namespace Wize.Controllers
                 if (coordonneesViewModel != null)
                 {
                     var coordonnees = coordonneesViewModel.CoordonneesViewModelToCoordonnees();
+
+                    _coordonneesService.AddCoordonnees(coordonnees);
                 }
             }
             return View();
