@@ -8,7 +8,7 @@ using CSharpFunctionalExtensions;
 
 namespace Metier.Repositories.Action
 {
-    public class ActionRepository
+    public class ActionRepository : IActionRepository
     {
         private readonly BaseDbContext _baseDbContext;
 

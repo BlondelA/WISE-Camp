@@ -59,6 +59,4 @@ namespace Wize.Models
             return coordonnees;
         }
     }
-    
-    
 }
