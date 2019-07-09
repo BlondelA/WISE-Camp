@@ -12,8 +12,7 @@ namespace Wize.Controllers
     public class CoordonneesController : Controller
     {
         private readonly ICoordonneesService _coordonneesService;
-
-
+        
         public CoordonneesController(IUtilisateurService coordonneesService)
         {
             _coordonneesService = coordonneesService;
