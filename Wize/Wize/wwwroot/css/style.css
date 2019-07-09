@@ -75,9 +75,12 @@ body {
   border-radius: 50px;
   border: 1px solid #CACDD3;
   height: 70px; }
-  .content-input:focus {
+  .content-input.active {
     border: none;
-    /*box-shadow: 0 1px 20px -1px #*/ }
+    -moz-box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5);
+    -webkit-box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5);
+    -o-box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5);
+    box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5); }
 
 .input-field.input-field-wise {
   display: flex;

@@ -20,9 +20,12 @@
                 <header>
                     <div class="content-img-header">
                         <img src="/images/logo-wise.png" />
-                        @if (ViewBag.Title == "Inscription"){
+                        @if (ViewBag.Title == "Inscription")
+                        {
                             <a href="/Login/Connexion" class="btn btn-secondary-wise">Connexion</a>
-                        } else{
+                        }
+                        else
+                        {
                             <a href="/Login/Inscription" class="btn btn-secondary-wise">Créer mon compte</a>
                         }
                     </div>
@@ -41,6 +44,7 @@
     </div>
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/script.js"></script>
     <script type="text/javascript" src="~/lib/materialize/js/materialize.min.js"></script>
 </body>
 </html>
