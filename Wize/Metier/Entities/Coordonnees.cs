@@ -10,10 +10,10 @@ namespace Metier.Entities
         public string ligne2 { get; set; } // TEXT (0 , 50)
         public string ligne3 { get; set; } // TEXT (0 , 50)
         public string courriel { get; set; } // TEXT (3 , 160)
-        public AdresseViewModel adresse { get; set; }
-        public NumtelViewModel telfix { get; set; }
-        public NumtelViewModel portable { get; set; }
-        public NumtelViewModel fax { get; set; }
-        public WebViewModel web { get; set; }
+        public Adresse adresse { get; set; }
+        public Numtel telfix { get; set; }
+        public Numtel portable { get; set; }
+        public Numtel fax { get; set; }
+        public Web web { get; set; }
     }
 }
