@@ -65,23 +65,8 @@ namespace Wize.Controllers
 
         }
 
-
         [HttpGet]
         public ActionResult Connexion()
-        //AFFICHAGE
-
-        // GET: User
-        public ActionResult IndexUtilisateurList()
-        {
-
-            var utilisateurViewModel = new UtilisateurViewModel()
-            {
-            };
-            return View(utilisateurViewModel);
-        }
-
-        // GET: User/Details/5
-        public ActionResult Details(int id)
         {
             return View();
         }
@@ -104,17 +89,32 @@ namespace Wize.Controllers
                 HttpContext.Session.SetString("Useremail", userOrNothing.mail);
 
                 return RedirectToAction("AccueilConnecte");
-
-
             }
             return View(connexionViewModel);
-
         }
 
 
-        public ActionResult AccueilConnecte()
+
+        //AFFICHAGE
+
+        // GET: User
+        public ActionResult IndexUtilisateurList()
         {
 
+            var utilisateurViewModel = new UtilisateurViewModel()
+            {
+            };
+            return View(utilisateurViewModel);
+        }
+
+        // GET: User/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        public ActionResult AccueilConnecte()
+        {
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 ViewBag.Usernom = HttpContext.Session.GetString("Usernom");
@@ -123,7 +123,6 @@ namespace Wize.Controllers
 
                 return View("AccueilConnecte");
             }
-
             return RedirectToAction("Connexion");
         }
 
@@ -131,7 +130,7 @@ namespace Wize.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
-
+        }
         //MODIFICATION
         // GET: User/Edit/5
         public ActionResult Edit(int id)
