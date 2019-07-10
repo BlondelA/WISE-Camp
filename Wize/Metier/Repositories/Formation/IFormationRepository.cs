@@ -9,5 +9,6 @@ namespace Metier.Repositories.Formation
     {
         Maybe<Metier.Entities.Formation> Get(int id);
         Metier.Entities.Formation Add(Metier.Entities.Formation entity);
+        List<Metier.Entities.Formation> GetAll();
     }
 }
