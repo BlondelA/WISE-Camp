@@ -13,7 +13,7 @@ namespace Wize.Controllers
     {
         private readonly ICoordonneesService _coordonneesService;
         
-        public CoordonneesController(IUtilisateurService coordonneesService)
+        public CoordonneesController(ICoordonneesService coordonneesService)
         {
             _coordonneesService = coordonneesService;
         }
@@ -36,38 +36,38 @@ namespace Wize.Controllers
                     _coordonneesService.AddCoordonnees(coordonnees);
                 }
             }
-            return View();
+            return RedirectToAction("Index","Home");
         }
 
-        [HttpGet]
-        public ActionResult GetCoordonnees(int id)
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult EditCoordonnees(int id)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult EditCoordonnees(CoordonneesViewModel coordonneesViewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                if (coordonneesViewModel != null)
-                {
-                    
-                }
-            }
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult SupprimerCoordonnees()
-        {
-            return View();
-        }
+//        [HttpGet]
+//        public ActionResult GetCoordonnees(int id)
+//        {
+//            return View();
+//        }
+//
+//        [HttpGet]
+//        public ActionResult EditCoordonnees(int id)
+//        {
+//            return View();
+//        }
+//
+//        [HttpPost]
+//        public ActionResult EditCoordonnees(CoordonneesViewModel coordonneesViewModel)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                if (coordonneesViewModel != null)
+//                {
+//                    
+//                }
+//            }
+//            return View();
+//        }
+//
+//        [HttpGet]
+//        public ActionResult SupprimerCoordonnees()
+//        {
+//            return View();
+//        }
     }
 }

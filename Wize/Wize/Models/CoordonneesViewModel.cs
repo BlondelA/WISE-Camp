@@ -44,6 +44,22 @@ namespace Wize.Models
         public Coordonnees CoordonneesViewModelToCoordonnees()
         {
             var coordonnees = new Coordonnees();
+            var numTel = new Numtel()
+            {
+                numtel = this.telfix.numtel
+            };
+            var portable = new Numtel()
+            {
+                numtel = this.portable.numtel
+            };
+            var fax = new Numtel()
+            {
+                numtel = this.fax.numtel
+            };
+            var web = new Web()
+            {
+                urlWeb = this.web.urlweb
+            };
             coordonnees.civilite = this.civilite;
             coordonnees.nom = this.nom;
             coordonnees.prenom = this.prenom;
@@ -52,10 +68,10 @@ namespace Wize.Models
             coordonnees.ligne3 = this.ligne3;
             coordonnees.courriel = this.courriel;
             coordonnees.adresse = this.adresse;
-            coordonnees.telfix.numtel = this.telfix.numtel;
-            coordonnees.portable.numtel = this.portable.numtel;
-            coordonnees.fax.numtel = this.fax.numtel;
-            coordonnees.web.urlWeb = this.web.urlweb;
+            coordonnees.telfix = numTel;
+            coordonnees.portable = portable;
+            coordonnees.fax = fax;
+            coordonnees.web = web;
             return coordonnees;
         }
     }
