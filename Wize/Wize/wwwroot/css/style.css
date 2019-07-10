@@ -65,7 +65,12 @@ body {
   border-radius: 8px;
   color: white;
   padding: 20px 14px;
-  font-family: "zona_black", sans-serif; }
+  font-family: "zona_black", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none; }
+  .btn-submit:hover {
+    background-color: #067087; }
 
 .color-grey {
   color: #CACDD3; }
@@ -102,6 +107,10 @@ body {
     font-weight: bold; }
     .input-field.input-field-wise .material-icons.prefix.active {
       color: #0D819F; }
+
+button:focus {
+  outline: none;
+  background-color: #067087; }
 
 @font-face {
   font-family: 'zona_black';

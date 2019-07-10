@@ -1,10 +1,28 @@
-@{
-    Layout = null;
+﻿@{
+    Layout = "_LayoutLogin";
 }
 
-<h1>Connexion</h1>
-<form action="/Connexion" methode="POST">
-    <input name="mail" type="text" placeholder="mail">
-    <input name="mdp" type="password" placeholder="Mot de passe">
-    <input type="submit">
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col s12"><h1 class="title-login">Connexion à Wise</h1></div>
+        <form action="/Connexion" methode="POST">
+            <div class="col s12">
+                <div class="input-field-wise input-field content-input" id="divMail">
+                    <i class="material-icons prefix color-grey">mail</i>
+                    <input id="mail" name="mail" type="email" placeholder="Mail" class="wise-input">
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="input-field-wise input-field content-input" id="divMdp">
+                    <i class="material-icons prefix color-grey">lock</i>
+                    <input id="mdp" name="mdp" type="password" placeholder="Mot de passe" class="wise-input">
+                </div>
+            </div>
+            <div class="input-field col s12">
+                <div class="content-btn-login">
+                    <button class="btn-submit" type="submit">Connexion</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -84,6 +84,12 @@
     color: white;
     padding: 20px 14px;
     font-family: $fontButton;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        background-color: darken( #0898B8, 10% );
+    }
 }
 
 .color-grey {
@@ -130,4 +136,9 @@
             color: #0D819F;
         }
     }
+}
+
+button:focus {
+    outline: none;
+    background-color: darken( #0898B8, 10% );
 }
