@@ -15,6 +15,7 @@ using Metier.Services.Interfaces;
 using Metier.Services;
 using Metier.Repositories.Utilisateur;
 using Metier.Repositories;
+using Metier.Repositories.Adresse;
 using Metier.Repositories.Coordonnees;
 
 namespace Wize
@@ -52,6 +53,8 @@ namespace Wize
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
             services.AddScoped<ICoordonneesService, CoordonneesService>();
             services.AddScoped<ICoordonneesRepository, CoordonneesRepository>();
+            services.AddScoped<IAdresseService, AdresseService>();
+            services.AddScoped<IAdresseRepository, AdresseRepository>();
 
 
 
