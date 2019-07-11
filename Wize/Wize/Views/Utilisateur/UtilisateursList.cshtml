@@ -1,12 +1,10 @@
-﻿
+﻿@model IEnumerable<UtilisateurViewModel>
+
 @{
     ViewData["Title"] = "IndexAdminList";
 }
 
-
-<h1>IndexAdmin</h1>
-
-@model IEnumerable<UtilisateurViewModel>
+<h1>Utilisateurs</h1>
 
 <table>
     @foreach (var utilisateur in Model)

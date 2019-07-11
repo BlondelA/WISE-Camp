@@ -20,9 +20,11 @@ namespace Metier.Services
             _baseDbContext = baseDbContext;
         }
 
-        public List<Formation> GetAllFormations(){
+        public List<Formation> GetAllFormations()
+        {
             var listFormation = _formationRepository.GetAll();
-            if(listFormation != null){
+            if (listFormation != null)
+            {
                 return listFormation;
             }
             return null;

@@ -32,8 +32,15 @@
     <Content Remove="wwwroot\fonts\dosis-semibold.woff2" />
     <Content Remove="wwwroot\fonts\dosis-extrabold.woff2" />
   </ItemGroup>
+  
   <ItemGroup>
     <Folder Include="Views\Adresse" />
+    <Folder Include="Views\Coordonnees" />
+    <Folder Include="Views\Formation" />
+    <Folder Include="Views\Home" />
+    <Folder Include="Views\Login" />
+    <Folder Include="Views\Shared" />
+    <Folder Include="Views\Utilisateur" />
     <Folder Include="wwwroot\scss\partials\" />
   </ItemGroup>
 </Project>

@@ -12,12 +12,12 @@ namespace Wize.Controllers
     public class AdresseController : Controller
     {
         private readonly IAdresseService _adresseService;
-        
+
         public AdresseController(IAdresseService adresseService)
         {
             _adresseService = adresseService;
         }
-        
+
         //page de base
         [HttpGet]
         public ActionResult Adresse()
@@ -29,16 +29,16 @@ namespace Wize.Controllers
         [HttpPost]
         public ActionResult Adresse(AdresseViewModel adresseViewModel)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if(adresseViewModel != null)
+                if (adresseViewModel != null)
                 {
                     var adresse = adresseViewModel.AdresseViewModelToAdresse();
 
                     _adresseService.AddAdresse(adresse);
                 }
-            }            
-            return RedirectToAction("Index","Home");
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         //suppression d'une adresse dans la base

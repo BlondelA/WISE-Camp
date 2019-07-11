@@ -47,13 +47,7 @@ namespace Metier.Data
         public DbSet<Session> Sessions { get; set; }
         public DbSet<SousModule> SousModules { get; set; }
         public DbSet<Web> Webs { get; set; }
-        public DbSet<Utilisateur> Utilisateurs {get;set;}
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Role> Roles { get; set; }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Action>().ToTable("Action");
-        //}
-        
     }
 }

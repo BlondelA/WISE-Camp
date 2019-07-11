@@ -11,9 +11,7 @@ namespace Metier.Entities
         public string siret { get; set; }
         // TEXT (1,250) non null
         public string raisonSociale { get; set; }
-        // Coordonnées
         public Coordonnees contactOrganisme { get; set; }
-        // potentiel
         public Potentiel potentiel { get; set; }
     }
 }
