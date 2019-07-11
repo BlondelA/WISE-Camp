@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "AccueilConnecte";
+}
+
+<h1>Espace d'administration</h1>
+
+<p>Bonjour @ViewBag.Userprenom @ViewBag.Usernom</p>
+
+@Html.ActionLink("Déconnexion", "Logout", "Login")

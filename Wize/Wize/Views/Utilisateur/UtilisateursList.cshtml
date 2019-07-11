@@ -1,0 +1,33 @@
+﻿@model IEnumerable<UtilisateurViewModel>
+
+@{
+    ViewData["Title"] = "IndexAdminList";
+}
+
+<h1>Utilisateurs</h1>
+
+<table>
+    @foreach (var utilisateur in Model)
+    {
+    <tr>
+        <td>
+            @utilisateur.nom
+        </td>
+        <td>
+            @utilisateur.prenom
+        </td>
+        <td>
+            @utilisateur.mail
+        </td>
+        <td>
+            @utilisateur.role
+        </td>
+        <td>
+            <button type="submit" class="btn btn-default">Modifier</button>
+        </td>
+        <td>
+            <button type="submit" class="btn btn-default">Supprimer</button>
+        </td>
+    </tr>
+    }
+</table>

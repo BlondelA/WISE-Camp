@@ -1,0 +1,83 @@
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode
+
+# Rider
+.idea
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
+
+# ignore all files starting with . or ~
+.*
+~*
+
+package-lock.json
+
+# ignore directories
+node_modules/
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+
+# ignore log files and databases
+*.log
+# *.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+#*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!README.md
+!CHANGELOG.md

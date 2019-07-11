@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:500,600,700,800&display=swap");
+body {
+  background-color: #F2FBFD; }
+
+.no-margin-col {
+  padding: 0 !important; }
+
+.no-margin-row {
+  margin: 0 !important; }
+
+.section-login .background-image-login-right {
+  display: none; }
+@media (min-width: 601px) {
+  .section-login .background-image-login-right {
+    display: block;
+    background-image: url("/images/background-login.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .section-login .background-image-login-right .login-title-h1 {
+      margin-top: 0;
+      font-family: "Dosis", sans-serif;
+      padding: 50px 30px 0 50px;
+      color: white;
+      font-weight: bold;
+      font-size: 30px; } }
+    @media (min-width: 601px) and (min-width: 768px) {
+      .section-login .background-image-login-right .login-title-h1 {
+        font-size: 40px; } }
+    @media (min-width: 601px) and (min-width: 841px) {
+      .section-login .background-image-login-right .login-title-h1 {
+        font-size: 50px; } }
+
+.section-login .content-img-header {
+  text-align: center; }
+  @media (min-width: 425px) {
+    .section-login .content-img-header {
+      display: flex;
+      justify-content: space-between; } }
+.section-login .btn.btn-secondary-wise {
+  margin: 25px 20px;
+  background: #F2FBFD;
+  box-shadow: none;
+  border: 1px solid #CACDD3;
+  border-radius: 8px;
+  color: black;
+  font-family: "zona_black", sans-serif; }
+  .section-login .btn.btn-secondary-wise:hover {
+    background-color: #F2FBFD; }
+
+.title-login {
+  color: #0898B8;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: "Dosis", sans-serif;
+  font-weight: bold; }
+
+.content-btn-login {
+  margin-top: 30px;
+  text-align: right; }
+
+.btn-submit {
+  background-color: #0898B8;
+  box-shadow: none;
+  border-radius: 8px;
+  color: white;
+  padding: 20px 14px;
+  font-family: "zona_black", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none; }
+  .btn-submit:hover {
+    background-color: #067087; }
+
+.color-grey {
+  color: #CACDD3; }
+
+.content-input {
+  background: white;
+  border-radius: 50px;
+  border: 1px solid #CACDD3;
+  height: 70px; }
+  .content-input.active {
+    border: none;
+    -moz-box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5);
+    -webkit-box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5);
+    -o-box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5);
+    box-shadow: 0px 1px 20px 0px rgba(155, 155, 155, 0.5); }
+
+.input-field.input-field-wise {
+  display: flex;
+  align-items: center;
+  padding: 0 10px; }
+  .input-field.input-field-wise .wise-input {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    margin-bottom: 0;
+    margin-left: -20px;
+    height: 70px;
+    caret-color: #0D819F; }
+  .input-field.input-field-wise .material-icons.prefix {
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 24px;
+    top: 0;
+    font-weight: bold; }
+    .input-field.input-field-wise .material-icons.prefix.active {
+      color: #0D819F; }
+
+button:focus {
+  outline: none;
+  background-color: #067087; }
+
+.link-a {
+  color: #4A4A4A;
+  font-family: "Dosis", sans-serif;
+  font-weight: bold; }
+  .link-a:hover {
+    text-decoration: underline; }
+  .link-a.login-a {
+    position: absolute;
+    bottom: 30px;
+    left: 0; }
+
+.content-social {
+  padding-top: 30px; }
+
+.btn.btn-google {
+  background: #D62D20;
+  border-radius: 8px; }
+
+.btn.btn-facebook {
+  background: #3E5C9A;
+  border-radius: 8px; }
+
+.btn.btn-linkedin {
+  background: #0E76A8;
+  border-radius: 8px; }
+
+@font-face {
+  font-family: 'zona_black';
+  src: url("/fonts/zona_black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+/*# sourceMappingURL=style.css.map */

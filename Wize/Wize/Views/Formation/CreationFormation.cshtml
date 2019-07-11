@@ -1,0 +1,523 @@
+﻿@model Wize.Models.FormationViewModel
+
+@{
+    ViewData["Title"] = "CreationFormation";
+}
+@using (Html.BeginForm())
+{
+    <h1>Créer Formation</h1>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        //Groupe domaine-formationl
+        <div class="form-row">
+            @*code FORMACODE*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Code FORMACODE</label>
+                @Html.EditorFor(model => model.domaineFormation.codeFORMACODE)
+            </div>
+            
+            @*code NSF*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>code NSF</label>
+                @Html.EditorFor(model => model.domaineFormation.codeNSF)
+            </div>
+
+            @*code ROME*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>code ROME</label>
+                @Html.EditorFor(model => model.domaineFormation.codeROME)
+            </div>
+        </div>
+
+        @*Intitulé formation*@
+        <div class="form-group">
+            <label>Intitulé formation</label>
+            @Html.EditorFor(model => model.intituleFormation)
+        </div>
+
+        @*objectif formation*@
+        <div class="form-group">
+            <label>Objectif formation</label>
+            @Html.EditorFor(model => model.objectifFormation)
+        </div>
+
+        @*resultat formation*@
+        <div class="form-group">
+            <label>Resultat formation</label>
+            @Html.EditorFor(model => model.resultatsAttendus)
+        </div>
+
+        @*contenu formation*@
+        <div class="form-group">
+            <label>Contenu formation</label>
+            @Html.EditorFor(model => model.contenuFormation)
+        </div>
+
+        <div class="form-row">
+            @*Certifiante boolean*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Certifiante</label>
+                @Html.RadioButton("Certifiante", "Oui")
+                @Html.RadioButton("Certifiante", "Non")
+            </div>
+
+            @*Contact Formation*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Contact Formation</label>
+                @Html.DropDownListFor(model => model.contactFormation.courriel, new SelectList(
+                new List<Object>
+                {
+                    new { value = 0 , text = "Red"  },
+                    new { value = 1 , text = "Blue" },
+                    new { value = 2 , text = "Green"}
+                }
+            ))
+            </div>
+        </div>
+
+        //        <div class="form-row">
+        //            @*Parcour formation*@
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                <label>Parcour formation</label>
+        //                @Html.DropDownList() @*CODE*@
+        //            </div>
+
+        //            @*Niveau Entrée*@
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                <label>Niveau entrée</label>
+        //                @Html.DropDownList() @*CODE*@
+        //            </div>
+        //        </div>
+
+        //        @*Objectif général*@
+        //        <div class="form-group">
+        //            <label>Objectif général</label>
+        //            @Html.DropDownList() @*CODE*@
+        //        </div>
+        <div class="form-row">
+            @*Code RNCP*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Code RNCP</label>
+                @Html.EditorFor(model => model.certification.codeCERTIFINFO)
+            </div>
+
+            @*Code CERTIFINFO*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Code Certifinfo</label>
+                @Html.EditorFor(model => model.certification.codeCERTIFINFO)
+            </div>
+        </div>
+
+        //        <div class="form-row">
+        //            @*Niveau sortie*@
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                <label>Niveau sortie</label>
+        //                @Html.DropDownList()@*CODE*@
+        //            </div>
+
+        @*URL formation*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>URL formation</label>
+            @Html.EditorFor(model => model.urlFormation)
+        </div>
+        //        </div>
+
+        @*Organisme Responsable Formation*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Organisme Responsable Formation</label>
+            @Html.DropDownListFor(model => model.organismeFormationResponsable.raisonSociale, new SelectList(
+                new List<Object>
+                {
+                    new { value = 0 , text = "Red"  },
+                    new { value = 1 , text = "Blue" },
+                    new { value = 2 , text = "Green"}
+                }
+            ))
+        </div>
+
+        @*Identifiant du module*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Identifiant du module</label>
+            @Html.EditorFor(model => model.identifiantModule)
+        </div>
+
+        //        <div class="form-row">
+        //            @*Positionnement*@
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                <label>Positionnement</label>
+        //                @Html.DropDownListFor() @*CODE*@
+        //            </div>
+
+        @*Groupe sous module*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Groupe sous module</label>
+            @Html.EditorFor(model => model.sousModule)
+        </div>
+        //        </div>
+
+        @*Reference du module*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Reference du module</label>
+            @Html.EditorFor(model => model.sousModule.referenceModule)
+        </div>
+
+        //        <div class="form-row">
+        //            @*Type module*@
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                <label>Type module</label>
+        //                @Html.DropDownList() @*CODE*@
+        //            </div>
+        
+        @*Module prérequi*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Module prérequi</label>
+            @Html.EditorFor(model => model.modulesPrerequis)
+        </div>
+        //       </div>
+
+        <div class="form-row">
+            @*Credit ECTS*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Credit ECTS</label>
+                @Html.EditorFor(model => model.creditsEcts)
+            </div>
+
+            @*Eligible CPF*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Eligible CPF</label>
+                @Html.CheckBox("Eligible CPF", false)
+            </div>
+        </div>
+
+        @*Rythme de la formation*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Rythme de la formation</label>
+            @Html.EditorFor(model => model.action.rythmeFormation)
+        </div>
+
+        @*Code public*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Code public</label>
+            @Html.EditorFor(model => model.action.codePublicVise)
+        </div>
+
+        @*Niveau d'entrée*@
+        //      <div class="form-group col-xl-6 col-lg-12">
+        //           <label>Niveau d'entrée</label>
+        //           @Html.DropDownList()@*CODE*@
+        //       </div>
+
+        @*Modalité d'alternance*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Modalité d'alternance</label>
+            @Html.EditorFor(model => model.action.modaliteAlternance)
+        </div>
+
+        @*Modalité d'enseignement*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Modalité d'enseignement</label>
+            @Html.EditorFor(model => model.action.modaliteEnseignement)
+        </div>
+
+        @*Modalité spécifique*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Modalité spécifique</label>
+            @Html.EditorFor(model => model.action.conditionsSpecifiques)
+        </div>
+        //        <div class="form-row">
+        //            @*Prise en charge frais possible*@
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                <label>Prise en charge frais possible</label>
+        //                @Html.DropDownList()@*CODE*@
+        //            </div>
+        @*Lieu de formation*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Lieu de formation</label>
+            @Html.DropDownListFor(model => model.action.lieuFormation, new SelectList(
+                new List<Object>
+                {
+                    new { value = 0 , text = "Red"  },
+                    new { value = 1 , text = "Blue" },
+                    new { value = 2 , text = "Green"}
+                }
+            ))
+        </div>
+
+        //        </div>
+        //        @*Modalité Entrée / sortie*@
+        //        <div class="form-group col-xl-6 col-lg-12">
+        //            <label>Modalité Entrée / Sortie</label>
+        //            @Html.DropDownList()@*CODE*@
+        //        </div>
+
+        //        @*Groupe session*@
+        //        <div class="form-group col-xl-6 col-lg-12">
+        //            <label>Groupe session</label>
+        //            @Html.EditorFor(model => model.action.session.)
+        //        </div>
+
+        //        @*Addresse d'inscription*@
+        //        <div class="form-group col-xl-6 col-lg-12">
+        //            <label>Adresse d'inscrition</label>
+        //            @Html.EditorFor(model => model.action.session.adresseInscription)
+        //        </div>
+
+        //        <div class=" form-row">
+        //          <div class="form-group col-xl-6 col-lg-12">
+        //                @*Date d'entrée*@
+        //                @*DATETIME*@
+        //            </div>
+
+        //            <div class="form-group col-xl-6 col-lg-12">
+        //                @*Date de sortie*@
+        //                @*DATE TIME*@
+        //            </div>
+        //        </div>
+
+        //        @*Modalité d'inscription*@
+        //        <div class="form-group col-xl-6 col-lg-12">
+        //            <label>Modalité d'inscription</label>
+        //            @Html.EditorFor(model => model.action.session.modaliteInscription)
+        //        </div>
+
+        //        @*Etat de recrutement*@
+        //        <div class="form-group col-xl-6 col-lg-12">
+        //            <label>Etat de recrutement</label>
+        //            @Html.DropDownList()@*CODE*@
+        //        </div>
+
+        <div class="form-row">
+            @*Restauration*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Restauration</label>
+                @Html.RadioButton("Restauration", "Oui")
+                @Html.RadioButton("Restauration", "Non")
+            </div>
+
+            @*Hébergement*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Hébergement</label>
+                @Html.RadioButton("Hebergement", "Oui")
+                @Html.RadioButton("Hebergement", "Non")
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Transport*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Transport</label>
+                @Html.RadioButton("Transport", "Oui")
+                @Html.RadioButton("Transport", "Non")
+            </div>
+
+            @*Accès handicapé*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Accés handicapé</label>
+                @Html.RadioButton("AccesHandicape", "Oui")
+                @Html.RadioButton("AccesHandicape", "Non")
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Langue de formation*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Langue de formation</label>
+                @Html.EditorFor(model => model.action.langueFormation)
+            </div>
+
+            @*Modalité de recrutement*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Modalité de recrutement</label>
+                @Html.EditorFor(model => model.action.modlitesRecrutement)
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Modalité pédagogique*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Modalité pédagogique</label>
+                @Html.EditorFor(model => model.action.modalitesPedagogiques)
+            </div>
+
+            @*Code modalité pédagogique*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Code de modalité pédagogique</label>
+                @Html.EditorFor(model => model.action.codeModalitePedagogique)
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Frais restants*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Frais restants</label>
+                @Html.EditorFor(model => model.action.fraisRestants)
+            </div>
+
+            @*Code périmètre recrutement*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Code périmètre recrutement</label>
+                @Html.EditorFor(model => model.action.codePerimetreRecrutement)
+            </div>
+        </div>
+
+        @*Info périmètre recrutement*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Info périmètre recrutement</label>
+            @Html.EditorFor(model => model.action.infosPerimetreRecrutement)
+        </div>
+
+        <div class="form-row">
+            @*Prix horaire TTC*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Prix horaire TTC</label>
+                @Html.EditorFor(model => model.action.prixHoraireTTC)
+            </div>
+
+            @*Prix total TTC*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Prix total TTC</label>
+                @Html.EditorFor(model => model.action.prixTotalTTC)
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Durée indicative*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Durée indicative</label>
+                @Html.EditorFor(model => model.action.dureeIndicative)
+            </div>
+
+            @*Nombre d'heure entreprise*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Nombre d'heure entreprise</label>
+                @Html.EditorFor(model => model.action.nombreHeuresEntreprise)
+            </div>
+        </div>
+
+        @*Nombre d'heure total*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Nombre d'heure total</label>
+            @Html.EditorFor(model => model.action.nombreHeuresTotal)
+        </div>
+
+        @*Détail condition prise en charge*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Détail condition prise en charge</label>
+            @Html.EditorFor(model => model.action.detailConditionsPriseEnCharge)
+        </div>
+
+        @*Conventionnement*@
+        //        <div class="form-group col-xl-6 col-lg-12">
+        //            <label>Conventionnement</label>
+        //            @Html.DropDownList()@*CODE*@
+        //        </div>
+
+        @*Durée conventionnée*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Durée conventionnée</label>
+            @Html.EditorFor(model => model.action.dureeConventionnee)
+        </div>
+
+        <div class="form-row">
+            @*Organisme formateur*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Organisme formateur</label>
+                @Html.DropDownListFor(model => model.action.organismeFormateur, new SelectList(
+                new List<Object>
+                {
+                    new { value = 0 , text = "Red"  },
+                    new { value = 1 , text = "Blue" },
+                    new { value = 2 , text = "Green"}
+                }
+            ))
+            </div>
+
+            @*Organisme financeur*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Organisme financeur</label>
+                @Html.DropDownListFor(model => model.action.organismeFinanceur, new SelectList(
+                new List<Object>
+                {
+                    new { value = 0 , text = "Red"  },
+                    new { value = 1 , text = "Blue" },
+                    new { value = 2 , text = "Green"}
+                }
+            ))
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Financement de formation*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Financement de formation</label>
+                @Html.EditorFor(model => model.action.financementFormation)
+            </div>
+
+            @*Nombre de places*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Nombre de places</label>
+                @Html.EditorFor(model => model.action.nbPlaces)
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Moyen pédagogique*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Moyen pédagogique</label>
+                @Html.EditorFor(model => model.action.moyensPedagogiques)
+            </div>
+
+            @*Responsable d'enseignement*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Responsable d'enseignement</label>
+                @Html.DropDownListFor(model => model.action.responsableEngagement, new SelectList(
+                new List<Object>
+                {
+                    new { value = 0 , text = "Red"  },
+                    new { value = 1 , text = "Blue" },
+                    new { value = 2 , text = "Green"}
+                }
+            ))
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Nombre heure CM*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Nombre heure CM</label>
+                @Html.EditorFor(model => model.action.nombreHeuresCm)
+            </div>
+
+            @*Nombre heure TD*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Nombre heure TD</label>
+                @Html.EditorFor(model => model.action.nombreHeuresTd)
+            </div>
+        </div>
+
+        <div class="form-row">
+            @*Nombre heure TP tuteur*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Nombre heure TP tuteur</label>
+                @Html.EditorFor(model => model.action.nombreHeuresTpTuteure)
+            </div>
+
+            @*Nombre heure TP non tuteur*@
+            <div class="form-group col-xl-6 col-lg-12">
+                <label>Nombre heure TP non tuteur</label>
+                @Html.EditorFor(model => model.action.nombreHeuresTpNonTuteure)
+            </div>
+        </div>
+        
+        @*Nombre heure personnel*@
+        <div class="form-group col-xl-6 col-lg-12">
+            <label>Nombre heure personnel</label>
+            @Html.EditorFor(model => model.action.nombreHeuresPersonnel)
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Valider</button>
+    }
+}
