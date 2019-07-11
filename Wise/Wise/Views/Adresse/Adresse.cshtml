@@ -1,0 +1,67 @@
+﻿@model Wise.Models.AdresseViewModel
+
+@{
+    ViewData["Title"] = "AdresseVueModel";
+}
+
+<h1>Adresses</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+
+    <div class="form-group">
+        <p>Pays</p>
+        @Html.EditorFor(model => model.pays)
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-xl-6 col-lg-12">
+            <p>Latitude</p>
+            @Html.EditorFor(model => model.geolocalisation.latitude)
+        </div>
+
+        <div class="form-group col-xl-6 col-lg-12">
+            <p>Longitude</p>
+            @Html.EditorFor(model => model.geolocalisation.longitude)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Region</p> 
+        @Html.EditorFor(model => model.region)
+    </div>
+
+    <div class="form-group">
+        <p>Ville</p>
+        @Html.EditorFor(model => model.ville)
+    </div>
+
+    <div class="form-group">
+        <p>Departement</p>
+        @Html.EditorFor(model => model.departement)
+    </div>
+
+    <div class="form-group">
+        <p>Code postal</p>
+        @Html.EditorFor(model => model.codepostal)
+    </div>
+
+    <div class="form-group">
+        <p>Code INSEE canton</p>
+        @Html.EditorFor(model => model.codeINSEEcanton)
+    </div>
+
+    <div class="form-group">
+        <p>Code INSEE commune</p>
+        @Html.EditorFor(model => model.codeINSEEcommune)
+    </div>
+
+    <div class="form-group">
+        <p>Ligne</p>
+        @Html.EditorFor(model => model.ligne)
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Ajouter</button> 
+}
