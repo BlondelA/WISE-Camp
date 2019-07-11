@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Wize.Models;
+using Metier.Services.Interfaces;
+
 
 namespace Wize.Controllers
 {
@@ -15,13 +17,19 @@ namespace Wize.Controllers
     {
         //CREATION
         // GET: User
+
+        private readonly IFormationService _formationService;
+
+        public FormationController(IFormationService formationService){
+            _formationService = formationService;
+        }
         public ActionResult IndexCreationFormation()
         {
 
-            var utilisateurViewModel = new FormationViewModel()
+            var formationViewModel = new FormationViewModel()
             {
             };
-            return View(utilisateurViewModel);
+            return View(formationViewModel);
         }
 
         // GET: Formation/Details/5
@@ -29,6 +37,46 @@ namespace Wize.Controllers
         {
             return View();
         }
+
+        //GET:Formation/Qualifiante
+
+        public ActionResult Qualifiante()
+        {
+            var formationViewModelQualifiantes =  new List<FormationViewModel>();
+            var myFormationViewModelQualifiantes = formationViewModelQualifiantes.Where(x => x.certifiante == false);
+            return View(myFormationViewModelQualifiantes);
+        }
+
+        //GET:Formation/Qualifiante
+
+        public ActionResult Certifiante()
+        {
+            var formationViewModelCertifiantes =  new List<FormationViewModel>();
+            var myFormationViewModelCertifiantes = formationViewModelCertifiantes.Where(x => x.certifiante == true);
+            return View(myFormationViewModelCertifiantes);
+        }
+
+        //GET : Formation/DateBetween
+
+        public ActionResult DateBetween(DateTime beginDate, DateTime endDate)
+        {
+            // on recupere les formations en base (getall)
+            var allFormation = _formationService.GetAllFormations();
+            
+            var listFormations = new List<FormationViewModel>();
+            foreach(var formation in allFormation){
+                foreach(var session in formation.action.session){
+                    if(session.periode.debut >= beginDate || session.periode.fin <= endDate){
+                        var formationViewModel = new FormationViewModel();
+                        listFormations.Add(formationViewModel.ViewModelForFilter(formation));
+                    }
+                }
+            }
+
+            // retourner la vue ou bien seulement les données en json en fonction de l'action faite
+            return View(listFormations);
+        }
+
 
         // GET: Formation/Create
         public ActionResult Create()
