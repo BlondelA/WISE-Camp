@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Wize.Models;
+using Metier.Services.Interfaces;
+
 
 namespace Wize.Controllers
 {
@@ -15,6 +17,12 @@ namespace Wize.Controllers
     {
         //CREATION
         // GET: User
+
+        private readonly IFormationService _formationService;
+
+        public FormationController(IFormationService formationService){
+            _formationService = formationService;
+        }
         public ActionResult IndexCreationFormation()
         {
 
@@ -52,23 +60,21 @@ namespace Wize.Controllers
 
         public ActionResult DateBetween(DateTime beginDate, DateTime endDate)
         {
-            var formationViewModelDateBetween = new List<FormationViewModel>();
-            var MyFormationViewModelDateBetween = new List<FormationViewModel>();
+            // on recupere les formations en base (getall)
+            var allFormation = _formationService.GetAllFormations();
             
-            var SessionBeginDate = new DateTime();
-            var SessionEndDate = new DateTime();
-            foreach(var f in formationViewModelDateBetween )
-            {
-                var actionViewModel = f.action;
-                SessionBeginDate = actionViewModel.session.FirstOrDefault(
-                    x => x.periode.debut == beginDate
-                ).periode.debut;
-                SessionEndDate = actionViewModel.session.FirstOrDefault(
-                    w => w.periode.fin == endDate
-                ).periode.debut;
-
+            var listFormations = new List<FormationViewModel>();
+            foreach(var formation in allFormation){
+                foreach(var session in formation.action.session){
+                    if(session.periode.debut >= beginDate || session.periode.fin <= endDate){
+                        var formationViewModel = new FormationViewModel();
+                        listFormations.Add(formationViewModel.ViewModelForFilter(formation));
+                    }
+                }
             }
-            return View();
+
+            // retourner la vue ou bien seulement les données en json en fonction de l'action faite
+            return View(listFormations);
         }
 
 

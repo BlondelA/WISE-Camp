@@ -12,6 +12,7 @@ namespace Wize.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 

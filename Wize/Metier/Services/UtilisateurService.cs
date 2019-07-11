@@ -1,11 +1,14 @@
-﻿using Metier.Data;
+﻿using CSharpFunctionalExtensions;
+using Metier.Data;
 using Metier.Entities;
 using Metier.Repositories;
 using Metier.Repositories.Utilisateur;
 using Metier.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+
 
 namespace Metier.Services
 {
@@ -36,6 +39,22 @@ namespace Metier.Services
             }
             return null;
         }
+
+        public Utilisateur getEmailAndPassword(string email, string motDePasse)
+        {
+            var userOrNothing = _utilisateurRepository.getEmailAndPassword(email, motDePasse);
+            //var user = _utilisateurRepository.GetByEmail(email);
+            if (userOrNothing.HasNoValue)
+            {
+                return null;
+            }
+            var utilisateur = userOrNothing.Value;
+            return utilisateur;
+        }
+
+     
+
+
 
     }
 }

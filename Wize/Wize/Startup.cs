@@ -15,6 +15,8 @@ using Metier.Services.Interfaces;
 using Metier.Services;
 using Metier.Repositories.Utilisateur;
 using Metier.Repositories;
+using Metier.Repositories.Adresse;
+using Metier.Repositories.Coordonnees;
 
 namespace Wize
 {
@@ -43,9 +45,17 @@ namespace Wize
             });
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            var connection = @"Server=10.2.8.224;port=3306;User Id=charly;Password=charly;Database=wisedb;";
+            services.AddDbContext<BaseDbContext>(options => options.UseMySql(connection));
             services.AddScoped<IUtilisateurService, UtilisateurService>();
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
+            services.AddScoped<ICoordonneesService, CoordonneesService>();
+            services.AddScoped<ICoordonneesRepository, CoordonneesRepository>();
+            services.AddScoped<IAdresseService, AdresseService>();
+            services.AddScoped<IAdresseRepository, AdresseRepository>();
+
 
 
         }
@@ -66,6 +76,7 @@ namespace Wize
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

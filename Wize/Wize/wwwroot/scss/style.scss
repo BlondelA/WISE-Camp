@@ -1,35 +1,11 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Dosis:500,600,700,800&display=swap');
+@import "partials/_variables";
+@import "partials/_index";
+@import "partials/_login";
 
-body {
-    background-color: #F2FBFD;
+@font-face {
+    font-family: 'zona_black';
+    src: url('/fonts/zona_black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
 }
-
-.no-margin-col{
-    padding: 0 !important;
-}
-
-.no-margin-row{
-    margin: 0 !important;
-}
-
-.section-login {
-    .background-image-login-right {
-        background-image: url('/images/background-login.png');
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        .login-title-h1 {
-            margin-top: 0;
-            font-family: 'Dosis', sans-serif;
-            padding: 50px 30px 0 50px;
-            color: white;
-            font-weight: bold;
-        }
-    }
-}
-
-/*button {
-
-    $title-imie: 'zona_black', sans-serif !default;
-}*/

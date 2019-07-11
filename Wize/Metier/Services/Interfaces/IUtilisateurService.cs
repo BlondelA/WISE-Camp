@@ -8,5 +8,7 @@ namespace Metier.Services.Interfaces
     public interface IUtilisateurService
     {
         Utilisateur AddUtilisateur(Utilisateur utilisateur);
+        Utilisateur getEmailAndPassword(string email, string motDePasse);
+
     }
 }
