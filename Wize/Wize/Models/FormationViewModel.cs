@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Metier.Entities;
 
 namespace Wize.Models
 {
@@ -70,5 +71,11 @@ namespace Wize.Models
         //TEXT
         [JsonProperty(PropertyName = "validations")]
         public string validations { get; set; }
+
+        public Formation formationViewModelToFormation()
+        {
+            var formation = new Formation();
+            return formation;
+        }
     }
 }
