@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Metier.Data;
 using CSharpFunctionalExtensions;
+using System.Collections.Generic;
 
 namespace Metier.Repositories.Formation
 {
@@ -22,6 +23,11 @@ namespace Metier.Repositories.Formation
         {
             var formation = _baseDbContext.Formations.Add(entity).Entity;
             return formation;
+        }
+
+        public List<Metier.Entities.Formation> GetAll(){
+            var listFormation = _baseDbContext.Formations.ToList();
+            return listFormation;
         }
     }
 }

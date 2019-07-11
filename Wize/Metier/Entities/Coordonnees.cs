@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Metier.Entities
 {
     public class Coordonnees

@@ -1,9 +1,11 @@
 using Newtonsoft.Json;
+using Metier.Entities;
 
 namespace Wize.Models
 {
     public class FormationViewModel
     {
+        public int Id {get;set;}
         //DomaineFormation
         [JsonProperty(PropertyName = "domaine-formation")]
         public DomaineFormationViewModel domaineFormation { get; set; }
@@ -70,5 +72,15 @@ namespace Wize.Models
         //TEXT
         [JsonProperty(PropertyName = "validations")]
         public string validations { get; set; }
+
+
+        public FormationViewModel ViewModelForFilter(Formation formation){
+            var formationViewModel = new FormationViewModel();
+            formationViewModel.organismeFormationResponsable = new OrganismeFormationResponsableViewModel();
+            formationViewModel.Id = formation.Id;
+            formationViewModel.organismeFormationResponsable.nomOrganisme = formation.organismeFormationResponsable.nomOrganisme;
+            formationViewModel.objectifFormation = formation.objectifFormation;
+            return formationViewModel;
+        }
     }
 }
