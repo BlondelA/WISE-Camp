@@ -4,9 +4,9 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Metier.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using Wize.Models;
 using Metier.Services.Interfaces;
 
@@ -16,13 +16,7 @@ namespace Wize.Controllers
     public class FormationController : Controller
     {
         //CREATION
-        // GET: User
-
-        private readonly IFormationService _formationService;
-
-        public FormationController(IFormationService formationService){
-            _formationService = formationService;
-        }
+        // GET: Formation
         public ActionResult IndexCreationFormation()
         {
 
@@ -81,24 +75,20 @@ namespace Wize.Controllers
         // GET: Formation/Create
         public ActionResult Create()
         {
-            return View();
+            return View("CreationFormation");
         }
 
         // POST: Formation/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(FormationViewModel formationViewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Create", "Formation");
+                var formation = formationViewModel.formationViewModelToFormation();
+                //_formationService.AddFormation(formation);
+                return RedirectToAction("Index", "Home");
             }
-            catch
-            {
-                return View();
-            }
+            return View(formationViewModel);
         }
 
         // GET: Formation/Edit/5
@@ -116,7 +106,7 @@ namespace Wize.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Eddit", "Formation");
+                return RedirectToAction("Edit", "Formation");
             }
             catch
             {
@@ -155,10 +145,10 @@ namespace Wize.Controllers
 
             //string path = @"c:\temp\MyTest.txt";
 
-            if (!System.IO.File.Exists(path)) 
+            if (!System.IO.File.Exists(path))
             {
                 // Create the file.
-                using (FileStream fs = System.IO.File.Create(path)) 
+                using (FileStream fs = System.IO.File.Create(path))
                 {
                     Byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
 
@@ -168,21 +158,16 @@ namespace Wize.Controllers
             }
 
             // Open the stream and read it back.
-            using (FileStream fs = System.IO.File.OpenRead(path)) 
+            using (FileStream fs = System.IO.File.OpenRead(path))
             {
                 byte[] b = new byte[1024];
                 UTF8Encoding temp = new UTF8Encoding(true);
 
-                while (fs.Read(b,0,b.Length) > 0) 
+                while (fs.Read(b, 0, b.Length) > 0)
                 {
                     Console.WriteLine(temp.GetString(b));
                 }
             }
-        }
-
-         public string PopulateJson()
-        {
-            return JsonConvert.SerializeObject(formationViewModel);
         }
     }
 }

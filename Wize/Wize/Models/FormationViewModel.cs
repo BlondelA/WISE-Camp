@@ -73,8 +73,14 @@ namespace Wize.Models
         [JsonProperty(PropertyName = "validations")]
         public string validations { get; set; }
 
+        public Formation formationViewModelToFormation()
+        {
+            var formation = new Formation();
+            return formation;
+        }
 
-        public FormationViewModel ViewModelForFilter(Formation formation){
+        public FormationViewModel ViewModelForFilter(Formation formation)
+        {
             var formationViewModel = new FormationViewModel();
             formationViewModel.organismeFormationResponsable = new OrganismeFormationResponsableViewModel();
             formationViewModel.Id = formation.Id;
