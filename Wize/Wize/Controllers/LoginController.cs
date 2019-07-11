@@ -1,19 +1,43 @@
+using Metier.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Wize.Models;
 
 namespace Wize.Controllers
 {
     public class LoginController : Controller
     {
+
+        private readonly IUtilisateurService _utilisateurService;
+
+        public LoginController(IUtilisateurService utilisateurService)
+        {
+            _utilisateurService = utilisateurService;
+        }
+
+
         [HttpGet]
         public ActionResult Inscription()
         {
             return View();
         }
-        
+
         [HttpPost]
-        public ActionResult Inscription(string nom, string prenom, string mail, string mdp, string mdpConfirmation, string informationsComplementaires)
+        public ActionResult Inscription(InscriptionViewModel inscriptionViewModel)
         {
-            return RedirectToAction("Connexion", "Login");
+            if (ModelState.IsValid)
+            {
+                if (inscriptionViewModel != null && inscriptionViewModel.motDePasse == inscriptionViewModel.confirmationMotDePasse)
+                {
+                    var utilisateur = inscriptionViewModel.InscriptionViewModelToUtilisateur();
+
+                    _utilisateurService.AddUtilisateur(utilisateur);
+
+                }
+                return RedirectToAction("Connexion", "Login");
+            }
+            return View(inscriptionViewModel);
+
         }
 
         [HttpGet]
@@ -21,11 +45,40 @@ namespace Wize.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
-        public ActionResult Connexion(string courriel, string motDePasse)
+        public ActionResult Connexion(ConnexionViewModel connexionViewModel)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var userOrNothing = _utilisateurService.getEmailAndPassword(connexionViewModel.mail, connexionViewModel.motDePasse);
+                if (userOrNothing == null)
+                {
+                    ModelState.AddModelError(nameof(ConnexionViewModel.mail),
+                        $"L'email ne correspond à aucun compte utilisateur existant");
+                    return View(connexionViewModel);
+                }
+                HttpContext.Session.SetString("UserID", userOrNothing.Id.ToString());
+                HttpContext.Session.SetString("Usernom", userOrNothing.nom);
+                HttpContext.Session.SetString("Userprenom", userOrNothing.prenom);
+                HttpContext.Session.SetString("Useremail", userOrNothing.mail);
+
+                return RedirectToAction("AccueilConnecte","Utilisateur");
+            }
+            return View(connexionViewModel);
+        }
+
+        public ActionResult AccueilConnecte()
+        {
+            if (HttpContext.Session.GetString("UserID") != null)
+            {
+                ViewBag.Usernom = HttpContext.Session.GetString("Usernom");
+                ViewBag.Userprenom = HttpContext.Session.GetString("Userprenom");
+                ViewBag.Useremail = HttpContext.Session.GetString("Useremail");
+
+                return View("AccueilConnecte");
+            }
+            return RedirectToAction("Connexion");
         }
 
         [HttpGet]
@@ -51,6 +104,13 @@ namespace Wize.Controllers
         {
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Connexion", "Login");
+        }
+
 
         public ActionResult LayoutLogin()
         {

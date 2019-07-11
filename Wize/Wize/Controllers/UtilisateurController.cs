@@ -35,66 +35,6 @@ namespace Wize.Controllers
             return View(utilisateurViewModel);
         }
 
-        // Inscription
-
-        // GET: User
-        [HttpGet]
-        public ActionResult Inscription()
-        {
-            return View();
-        }
-
-        // POST : user
-        [HttpPost]
-        public ActionResult Inscription(InscriptionViewModel inscriptionViewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                if (inscriptionViewModel != null && inscriptionViewModel.motDePasse == inscriptionViewModel.confirmationMotDePasse)
-                {
-                    var utilisateur = inscriptionViewModel.InscriptionViewModelToUtilisateur();
-
-                    _utilisateurService.AddUtilisateur(utilisateur);
-                    //FormsAuthentication.SetAuthCookie(utilisateur.Id.ToString(), false);
-
-
-                }
-                return RedirectToAction("Index", "Home");
-            }
-            return View(inscriptionViewModel);
-
-        }
-
-        [HttpGet]
-        public ActionResult Connexion()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Connexion(ConnexionViewModel connexionViewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                var userOrNothing = _utilisateurService.getEmailAndPassword(connexionViewModel.mail, connexionViewModel.motDePasse);
-                if (userOrNothing == null)
-                {
-                    ModelState.AddModelError(nameof(ConnexionViewModel.mail),
-                        $"L'email ne correspond à aucun compte utilisateur existant");
-                    return View(connexionViewModel);
-                }
-                HttpContext.Session.SetString("UserID", userOrNothing.Id.ToString());
-                HttpContext.Session.SetString("Usernom", userOrNothing.nom);
-                HttpContext.Session.SetString("Userprenom", userOrNothing.prenom);
-                HttpContext.Session.SetString("Useremail", userOrNothing.mail);
-
-                return RedirectToAction("AccueilConnecte");
-            }
-            return View(connexionViewModel);
-        }
-
-
-
         //AFFICHAGE
 
         // GET: User
@@ -126,11 +66,7 @@ namespace Wize.Controllers
             return RedirectToAction("Connexion");
         }
 
-        public ActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
-        }
+
         //MODIFICATION
         // GET: User/Edit/5
         public ActionResult Edit(int id)
@@ -178,5 +114,6 @@ namespace Wize.Controllers
                 return View();
             }
         }
+
     }
 }
