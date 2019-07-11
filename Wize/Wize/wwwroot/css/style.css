@@ -112,6 +112,32 @@ button:focus {
   outline: none;
   background-color: #067087; }
 
+.link-a {
+  color: #4A4A4A;
+  font-family: "Dosis", sans-serif;
+  font-weight: bold; }
+  .link-a:hover {
+    text-decoration: underline; }
+  .link-a.login-a {
+    position: absolute;
+    bottom: 30px;
+    left: 0; }
+
+.content-social {
+  padding-top: 30px; }
+
+.btn.btn-google {
+  background: #D62D20;
+  border-radius: 8px; }
+
+.btn.btn-facebook {
+  background: #3E5C9A;
+  border-radius: 8px; }
+
+.btn.btn-linkedin {
+  background: #0E76A8;
+  border-radius: 8px; }
+
 @font-face {
   font-family: 'zona_black';
   src: url("/fonts/zona_black.woff") format("woff");

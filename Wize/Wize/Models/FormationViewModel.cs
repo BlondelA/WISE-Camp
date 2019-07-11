@@ -5,6 +5,7 @@ namespace Wize.Models
 {
     public class FormationViewModel
     {
+        public int Id {get;set;}
         //DomaineFormation
         [JsonProperty(PropertyName = "domaine-formation")]
         public DomaineFormationViewModel domaineFormation { get; set; }
@@ -76,6 +77,16 @@ namespace Wize.Models
         {
             var formation = new Formation();
             return formation;
+        }
+
+        public FormationViewModel ViewModelForFilter(Formation formation)
+        {
+            var formationViewModel = new FormationViewModel();
+            formationViewModel.organismeFormationResponsable = new OrganismeFormationResponsableViewModel();
+            formationViewModel.Id = formation.Id;
+            formationViewModel.organismeFormationResponsable.nomOrganisme = formation.organismeFormationResponsable.nomOrganisme;
+            formationViewModel.objectifFormation = formation.objectifFormation;
+            return formationViewModel;
         }
     }
 }

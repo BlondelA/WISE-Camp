@@ -15,6 +15,8 @@ using Metier.Services.Interfaces;
 using Metier.Services;
 using Metier.Repositories.Utilisateur;
 using Metier.Repositories;
+using Metier.Repositories.Adresse;
+using Metier.Repositories.Coordonnees;
 
 namespace Wize
 {
@@ -49,6 +51,11 @@ namespace Wize
             services.AddDbContext<BaseDbContext>(options => options.UseMySql(connection));
             services.AddScoped<IUtilisateurService, UtilisateurService>();
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
+            services.AddScoped<ICoordonneesService, CoordonneesService>();
+            services.AddScoped<ICoordonneesRepository, CoordonneesRepository>();
+            services.AddScoped<IAdresseService, AdresseService>();
+            services.AddScoped<IAdresseRepository, AdresseRepository>();
+
 
 
         }
@@ -76,7 +83,7 @@ namespace Wize
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=Connexion}/{id?}");
             });
         }
     }

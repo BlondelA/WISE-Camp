@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Metier.Entities;
 
 namespace Wize.Models
 {
@@ -31,5 +32,27 @@ namespace Wize.Models
         // geolocalisation
         [JsonProperty(PropertyName = "geolocalisation")]
         public GeolocalisationViewModel geolocalisation { get; set; }
+        
+        public Adresse AdresseViewModelToAdresse()
+        {
+            var adresse = new Adresse();
+
+            var geolocalisation = new Geolocalisation() {
+                latitude = this.geolocalisation.latitude,
+                longitude = this.geolocalisation.longitude
+            };
+            
+            adresse.codeINSEEcanton = this.codeINSEEcanton;
+            adresse.codeINSEEcommune = this.codeINSEEcommune;
+            adresse.codepostal = this.codepostal;
+            adresse.departement = this.departement;
+            adresse.geolocalisation = geolocalisation;
+            adresse.ligne = this.ligne;
+            adresse.pays = this.pays;
+            adresse.region = this.region;
+            adresse.ville = this.ville;
+            
+            return adresse;
+        }
     }
 }

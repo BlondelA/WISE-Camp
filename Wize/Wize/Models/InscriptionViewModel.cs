@@ -26,8 +26,8 @@ namespace Wize.Models
         [Display(Prompt = "Mot de passe")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Le mot de passe est obligatoire")]
-        [RegularExpression("^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^a-zA-Z0-9])|(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])).{8,}$",
-    ErrorMessage = "Le mot de passe doit contenir au moins 8 caractères respectant au moins 3 des 4 critères suivants : une majuscule (A - Z), une minuscule (a - z), un nombre (0 - 9) et un caractère spécial ( ex : !@#$%^&*)")]
+    //    [RegularExpression("^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^a-zA-Z0-9])|(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])).{8,}$",
+    //ErrorMessage = "Le mot de passe doit contenir au moins 8 caractères respectant au moins 3 des 4 critères suivants : une majuscule (A - Z), une minuscule (a - z), un nombre (0 - 9) et un caractère spécial ( ex : !@#$%^&*)")]
         public string motDePasse { get; set; }
         // TEXT
         [Display(Prompt = "Confirmer votre mot de passe")]

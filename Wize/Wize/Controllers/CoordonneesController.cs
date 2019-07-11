@@ -1,41 +1,73 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Metier.Services;
-//using Metier.Services.Interfaces;
-//using Microsoft.AspNetCore.Mvc;
-//using Wize.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Metier.Services;
+using Metier.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Wize.Models;
 
-//namespace Wize.Controllers
-//{
-//    public class CoordonneesController : Controller
-//    {
-//        private readonly ICoordonneesService _coordonneesService;
+namespace Wize.Controllers
+{
+    public class CoordonneesController : Controller
+    {
+        private readonly ICoordonneesService _coordonneesService;
+        
+        public CoordonneesController(ICoordonneesService coordonneesService)
+        {
+            _coordonneesService = coordonneesService;
+        }
+        
+        [HttpGet]
+        public ActionResult AjoutCoordonnees()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public ActionResult AjoutCoordonnees(CoordonneesViewModel coordonneesViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                if (coordonneesViewModel != null)
+                {
+                    var coordonnees = coordonneesViewModel.CoordonneesViewModelToCoordonnees();
 
-
-//        public CoordonneesController(IUtilisateurService utilisateurService)
-//        {
-//            _coordonneesService = _coordonneesService;
-//        }
+                    _coordonneesService.AddCoordonnees(coordonnees);
+                }
+            }
+            return RedirectToAction("Index","Home");
+        }
 
 //        [HttpGet]
-//        public ActionResult AjoutCoordonnees()
+//        public ActionResult GetCoordonnees(int id)
 //        {
 //            return View();
 //        }
-
+//
+//        [HttpGet]
+//        public ActionResult EditCoordonnees(int id)
+//        {
+//            return View();
+//        }
+//
 //        [HttpPost]
-//        public ActionResult AjoutCoordonnees(CoordonneesViewModel coordonneesViewModel)
+//        public ActionResult EditCoordonnees(CoordonneesViewModel coordonneesViewModel)
 //        {
 //            if (ModelState.IsValid)
 //            {
 //                if (coordonneesViewModel != null)
 //                {
-//                    var coordonnees = coordonneesViewModel.CoordonneesViewModelToCoordonnees();
+//                    
 //                }
 //            }
 //            return View();
 //        }
-//    }
-//}
+//
+//        [HttpGet]
+//        public ActionResult SupprimerCoordonnees()
+//        {
+//            return View();
+//        }
+    }
+}

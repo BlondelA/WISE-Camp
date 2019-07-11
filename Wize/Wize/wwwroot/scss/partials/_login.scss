@@ -142,3 +142,36 @@ button:focus {
     outline: none;
     background-color: darken( #0898B8, 10% );
 }
+
+.link-a {
+    color: #4A4A4A;
+    font-family: $fontDosis;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &.login-a {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+    }
+}
+
+.content-social{
+    padding-top: 30px;
+}
+
+.btn.btn-google {
+    background: #D62D20;
+    border-radius: 8px;
+}
+.btn.btn-facebook {
+    background: #3E5C9A;
+    border-radius: 8px;
+}
+.btn.btn-linkedin {
+    background: #0E76A8;
+    border-radius: 8px;
+}
