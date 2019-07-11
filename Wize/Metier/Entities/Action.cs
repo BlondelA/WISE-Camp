@@ -19,7 +19,6 @@ namespace Metier.Entities
         public string conditionsSpecifiques { get; set; }
         // CODE (dict-boolean) non null
         public Code priseEnChargeFraisPossible { get; set; }
-        // Coordonnées
         public Coordonnees lieuFormation { get; set; }
         // CODE (dict-modalites-es) non null
         public Code modaliteEntreesSorties { get; set; }
@@ -39,7 +38,6 @@ namespace Metier.Entities
         public string modlitesRecrutement { get; set; }
         // TEXT (0,200)
         public string modalitesPedagogiques { get; set; }
-        //code modalité pédagogique
         public CodeModalitePedagogique codeModalitePedagogique { get; set; }
         // TEXT (0,200)
         public string fraisRestants { get; set; }
@@ -65,9 +63,7 @@ namespace Metier.Entities
         public Code conventionnement { get; set; }
         // INT
         public int dureeConventionnee { get; set; }
-        // Organisme formateur
         public OrganismeFormateur organismeFormateur { get; set; }
-        // Organisme financeur
         public OrganismeFinanceur organismeFinanceur { get; set; }
         // TEXT
         public string financementFormation { get; set; }
@@ -75,7 +71,6 @@ namespace Metier.Entities
         public int nbPlaces { get; set; }
         // TEXT
         public string moyensPedagogiques { get; set; }
-        // Coordonnées
         public Coordonnees responsableEngagement { get; set; }
         // INT
         public int nombreHeuresCm { get; set; }

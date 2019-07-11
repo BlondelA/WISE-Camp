@@ -4,6 +4,6 @@ namespace Metier.Services.Interfaces
 {
     public interface IAdresseService
     {
-        Adresse AddAdresse (Adresse adresse);
+        Adresse AddAdresse(Adresse adresse);
     }
 }

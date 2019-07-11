@@ -1,12 +1,10 @@
-﻿
+﻿@model IEnumerable<FormationViewModel>;
+
 @{
     ViewData["Title"] = "FormationList";
 }
 
-
-<h1>FormationList</h1>
-
-@model IEnumerable<FormationViewModel>
+<h1>Formations</h1>
 
 <table>
     @foreach (var formation in Model)

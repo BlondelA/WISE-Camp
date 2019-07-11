@@ -15,7 +15,6 @@ namespace Metier.Entities
         public string mail { get; set; }
         // TEXT
         public string motDePasse { get; set; }
-        // role
         public Role role { get; set; }
     }
 }
